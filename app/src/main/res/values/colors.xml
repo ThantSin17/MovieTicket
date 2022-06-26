@@ -10,5 +10,6 @@
     <color name="colorPrimary">#623EEA</color>
     <color name="colorPrimaryDark">#5737D3</color>
     <color name="secondaryTextColor">#DBDDE2</color>
+    <color name="secondaryTextBlackColor">#80000000</color>
     <color name="colorAccent">#623EEA</color>
 </resources>

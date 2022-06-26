@@ -8,13 +8,15 @@ import android.view.WindowInsetsController
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import com.stone.movieticket.R
+import kotlinx.android.synthetic.main.activity_welcome.*
 
 class WelcomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
-//       // window.statusBarColor = resources.getColor(android.R.color.transparent)
+
+        //hide status bar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(false)
         } else {
@@ -24,5 +26,14 @@ class WelcomeActivity : AppCompatActivity() {
             )
         }
 
+
+        setUpListener()
+
+    }
+
+    private fun setUpListener() {
+        btnGetStart.setOnClickListener {
+            startActivity(LoginActivity.getInstance(this))
+        }
     }
 }

@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/margin_medium_2"
+    android:layout_marginEnd="@dimen/margin_medium_2"
     tools:context=".ui.LoginActivity">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWelcome"
+        android:text="@string/lbl_welcome"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_heading_2x"
+        android:layout_marginTop="@dimen/margin_xxlarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWelcomeText"
+        android:text="@string/lbl_welcome_back_login_to_continue"
+        android:layout_below="@id/tvWelcome"
+        android:layout_marginTop="@dimen/margin_card_medium"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:textSize="@dimen/text_regular_3x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_marginStart="@dimen/margin_card_medium_2"
+        android:layout_marginEnd="@dimen/margin_card_medium_2"
+        android:layout_marginTop="@dimen/margin_xxlarge"
+        android:layout_below="@id/tvWelcomeText"
+        android:layout_width="match_parent"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorGravity="bottom"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        android:layout_height="wrap_content"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frgContainer"
+            android:layout_below="@id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

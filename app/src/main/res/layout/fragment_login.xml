@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/margin_large"
+    tools:context=".ui.fragment.LoginFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEmailText"
+        android:text="@string/lbl_email"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editEmail"
+        android:layout_below="@id/tvEmailText"
+        android:inputType="textEmailAddress"
+        android:includeFontPadding="true"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular_3x"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPasswordText"
+        android:text="@string/lbl_password"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_below="@id/editEmail"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPasswordText"
+        android:includeFontPadding="true"
+        android:inputType="textPassword"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium_2"
+        android:paddingBottom="20dp"
+        android:textSize="@dimen/text_regular_3x" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvForgetPassword"
+        android:layout_below="@id/editPassword"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:textSize="@dimen/text_regular_2x"
+        android:text="@string/lbl_forgot_password"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFacebook"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvForgetPassword"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:padding="@dimen/margin_medium_2"
+        android:text="@string/lbl_sign_in_with_facebook"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:textSize="@dimen/text_regular_3x"
+        app:cornerRadius="@dimen/margin_medium"
+        app:icon="@drawable/ic_facebook"
+        app:iconSize="@dimen/margin_xlarge"
+        app:iconTint="@null"
+        app:strokeColor="@color/secondaryTextColor" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoogle"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFacebook"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:padding="@dimen/margin_medium_2"
+        android:text="@string/lbl_sign_in_with_google"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:textSize="@dimen/text_regular_3x"
+        app:cornerRadius="@dimen/margin_medium"
+        app:icon="@drawable/ic_google"
+        app:iconSize="@dimen/margin_xlarge"
+        app:iconTint="@null"
+        app:strokeColor="@color/secondaryTextColor" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirm"
+        android:layout_below="@id/btnGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/margin_medium"
+        android:text="@string/lbl_confirm"
+        android:padding="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        />
+</RelativeLayout>
