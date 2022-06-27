@@ -1,4 +1,4 @@
-package com.stone.movieticket.ui
+package com.stone.movieticket.ui.activity
 
 import android.content.Context
 import android.content.Intent
@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
 
     companion object{
         fun getInstance(context: Context): Intent {
-            return  Intent(context,LoginActivity::class.java)
+            return  Intent(context, LoginActivity::class.java)
         }
     }
 

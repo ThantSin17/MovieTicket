@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginStart="@dimen/margin_medium_2"
     android:layout_marginEnd="@dimen/margin_medium_2"
-    tools:context=".ui.LoginActivity">
+    tools:context=".ui.activity.LoginActivity">
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvWelcome"
         android:text="@string/lbl_welcome"

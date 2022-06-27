@@ -1,12 +1,9 @@
-package com.stone.movieticket.ui
+package com.stone.movieticket.ui.activity
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowInsets
-import android.view.WindowInsetsController
 import android.view.WindowManager
-import androidx.annotation.RequiresApi
 import com.stone.movieticket.R
 import kotlinx.android.synthetic.main.activity_welcome.*
 

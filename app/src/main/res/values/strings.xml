@@ -26,4 +26,7 @@
     <string name="lbl_log_out">Log out</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="lbl_plot_summary">Plot Summary</string>
+    <string name="lbl_cast">Cast</string>
+    <string name="lbl_get_your_ticket">Get your ticket</string>
 </resources>

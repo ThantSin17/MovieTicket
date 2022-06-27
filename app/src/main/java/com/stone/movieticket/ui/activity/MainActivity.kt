@@ -1,30 +1,20 @@
-package com.stone.movieticket
+package com.stone.movieticket.ui.activity
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowInsetsController
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.google.android.material.navigation.NavigationView
+import com.stone.movieticket.R
+import com.stone.movieticket.delegate.MovieViewHolderDelegate
 import com.stone.movieticket.view_pods.MovieListViewPods
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import java.lang.Exception
-import kotlin.coroutines.coroutineContext
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),MovieViewHolderDelegate {
     companion object {
         fun getInstance(context: Context): Intent {
             return Intent(context, MainActivity::class.java)
@@ -49,9 +39,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpViewPod() {
         val nowShowing = vpNowShowing as MovieListViewPods
-        nowShowing.setUpMovieListViewPod("Now Showing")
+        nowShowing.setUpMovieListViewPod("Now Showing",this)
         val comingSoon = vpComingSoon as MovieListViewPods
-        comingSoon.setUpMovieListViewPod("Coming Soon")
+        comingSoon.setUpMovieListViewPod("Coming Soon",this)
     }
 
     override fun onResume() {
@@ -93,5 +83,9 @@ class MainActivity : AppCompatActivity() {
             R.string.close
         )
         toggle.syncState()
+    }
+
+    override fun onTapMovie() {
+        startActivity(MovieDetailActivity.getInstance(this))
     }
 }
