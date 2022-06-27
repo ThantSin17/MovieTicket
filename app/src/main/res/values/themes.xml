@@ -5,6 +5,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
 <!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
 <!--        <item name="colorOnPrimary">@color/white</item>-->
 <!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
@@ -20,10 +22,18 @@
 <!--        <item name="android:windowFullscreen">true</item>-->
 
 <!--        <item name="android:fitsSystemWindows">true</item>-->
-        <item name="android:statusBarColor">@android:color/transparent</item>
+
     </style>
     <style name="TabLayoutTextStyle">
         <item name="android:textSize">@dimen/text_regular_3x</item>
         <item name="android:textStyle">bold</item>
+    </style>
+    <style name="roundedCornersImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/margin_large</item>
+    </style>
+    <style name="roundImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

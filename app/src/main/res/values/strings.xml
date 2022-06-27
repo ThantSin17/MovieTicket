@@ -5,7 +5,7 @@
     <string name="lbl_hello_welcome_to_galaxy_app">Hello! Welcome to Galaxy App</string>
     <string name="lbl_welcome_back_login_to_continue">Welcome back, Login to continue</string>
 
-    
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lbl_email">Email</string>
     <string name="lbl_password">Password</string>
@@ -17,4 +17,13 @@
     <string name="lbl_confirm">Confirm</string>
     <string name="lbl_already_account">Already account ?</string>
     <string name="lbl_register">Register</string>
+    <string name="lbl_edit">Edit</string>
+    <string name="lbl_promotion_code">Promotion Code</string>
+    <string name="lbl_select_a_language">Select a language</string>
+    <string name="lbl_term_of_services">Term of Services</string>
+    <string name="lbl_help">Help</string>
+    <string name="lbl_rate_us">Rate Us</string>
+    <string name="lbl_log_out">Log out</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>
