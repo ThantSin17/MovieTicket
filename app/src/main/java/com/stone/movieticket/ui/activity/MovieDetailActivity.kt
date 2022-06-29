@@ -49,7 +49,9 @@ class MovieDetailActivity : AppCompatActivity() {
         ivBack.setOnClickListener {
             onBackPressed()
         }
-        b
+        btnGetTicket.setOnClickListener {
+            startActivity(ChooseMovieTimeActivity.getInstance(this))
+        }
     }
 
     private fun setUpRecyclerView() {

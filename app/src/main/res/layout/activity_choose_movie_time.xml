@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.ChooseMovieTimeActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="?actionBarSize"
+        app:srcCompat="@drawable/ic_outline_chevron_left_black_24"
+        app:tint="@color/white" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDay"
+        android:layout_below="@id/ivBack"
+        tools:listitem="@layout/view_holder_day"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_below="@id/rvDay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/background_view_corner"
+        >
+
+<!--        <include-->
+<!--            android:id="@+id/rvAvailable"-->
+<!--            layout="@layout/view_pod_movie_time"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/margin_medium_2"-->
+<!--            android:layout_marginTop="@dimen/margin_medium_3"-->
+<!--            android:layout_marginEnd="@dimen/margin_medium_2" />-->
+<!--        <include-->
+<!--            android:id="@+id/rv"-->
+<!--            android:layout_below="@id/rvAvailable"-->
+<!--            android:layout_marginStart="@dimen/margin_medium_2"-->
+<!--            android:layout_marginEnd="@dimen/margin_medium_2"-->
+<!--            android:layout_marginTop="@dimen/margin_medium_3"-->
+<!--            layout="@layout/view_pod_movie_time"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMovieTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btnNext"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/text_regular_3x"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/margin_medium_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            android:layout_gravity="bottom"
+            android:text="@string/lbl_next"
+            android:layout_alignParentBottom="true"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/margin_xxlarge"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_btn_getTicket"/>
+    </RelativeLayout>
+
+</RelativeLayout>
