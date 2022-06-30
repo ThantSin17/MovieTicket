@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="28dp"
+    android:layout_marginStart="@dimen/margin_medium"
+    android:background="@drawable/backgroud_ticket"
+    android:layout_marginTop="@dimen/margin_medium"
+    android:layout_height="30dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_regular_3x" />
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.ChooseTicketActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:layout_marginTop="?actionBarSize"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_outline_chevron_left_black_24" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMovieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivBack"
+        android:layout_centerHorizontal="true"
+        android:text="Detective Pikachu"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_heading_1x"
+        android:textStyle="bold" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCinemaName"
+        android:layout_below="@id/tvMovieTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="Galaxy Cinema - Golden City"
+        android:textSize="@dimen/margin_medium_2"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMovieTime"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_small"
+        android:textColor="#CC000000"
+        android:text="Wednesday, 10 May, 07:00 PM"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTicket"
+        android:layout_marginStart="@dimen/margin_xxlarge"
+        android:layout_marginEnd="@dimen/margin_xxlarge"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        app:stackFromEnd = "true"
+        app:reverseLayout = "true"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMovieTime"
+        android:layout_marginTop="@dimen/margin_medium_2" />
+</RelativeLayout>

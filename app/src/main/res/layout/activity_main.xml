@@ -98,7 +98,6 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:menu="@menu/main"
         android:layout_gravity="start">
         <include layout="@layout/layout_drawer"
             android:layout_width="match_parent"

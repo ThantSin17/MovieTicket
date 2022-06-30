@@ -11,8 +11,8 @@
         android:id="@+id/ivBack"
         android:layout_width="@dimen/margin_xxlarge"
         android:layout_height="@dimen/margin_xxlarge"
-        android:scaleType="centerCrop"
         android:layout_marginTop="?actionBarSize"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_outline_chevron_left_black_24"
         app:tint="@color/white" />
     <androidx.recyclerview.widget.RecyclerView

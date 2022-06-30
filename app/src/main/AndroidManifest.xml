@@ -14,8 +14,14 @@
         android:theme="@style/Theme.MovieTicket"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.ComboSetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ChooseTicketActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.ChooseMovieTimeActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,15 +33,13 @@
             android:exported="false" />
         <activity
             android:name=".ui.activity.WelcomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_medium_2"
+    android:layout_marginStart="@dimen/margin_medium_2"
+    android:layout_marginEnd="@dimen/margin_medium_2">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvComboSetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:text="Combo Set M"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_3x"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvComboSetAmount"
+        android:layout_width="@dimen/width_combo_set_amount"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tvComboSetTitle"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="15 $"
+        android:textSize="@dimen/text_regular_3x" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvComboSetDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvComboSetTitle"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_toStartOf="@id/llChooseComboSet"
+        android:textColor="@color/secondaryTextBlackColor"
+        android:text="Combo Size M 220z. Coke (X1) and medium Popcorn X1"
+        android:textSize="@dimen/text_regular_2x" />
+
+    <LinearLayout
+        android:id="@+id/llChooseComboSet"
+        android:layout_width="@dimen/width_combo_set_amount"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:layout_below="@id/tvComboSetTitle"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/background_comboset_amount"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_regular_3x"
+            android:background="@drawable/backgroud_comboset_amount_item"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="-" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_regular_3x"
+            android:background="@drawable/backgroud_comboset_amount_item"
+            android:gravity="center"
+            android:text="0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_regular_3x"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="+" />
+    </LinearLayout>
+</RelativeLayout>

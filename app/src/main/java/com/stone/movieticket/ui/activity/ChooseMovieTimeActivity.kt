@@ -40,6 +40,13 @@ class ChooseMovieTimeActivity : AppCompatActivity() {
 
         setUpRecyclerView()
         setUpViewPod()
+        setUpListener()
+    }
+
+    private fun setUpListener() {
+        btnNext.setOnClickListener {
+            startActivity(ComboSetActivity.getInstance(this))
+        }
     }
 
     private fun setUpViewPod() {

@@ -14,4 +14,6 @@
     <color name="colorAccent">#623EEA</color>
     <color name="transparent">@android:color/transparent</color>
     <color name="yellow">#e7b943</color>
+    <color name="green">#19be8c</color>
+    <color name="secondaryTextBlack80Color">#CC000000</color>
 </resources>
