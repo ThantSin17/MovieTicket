@@ -3,16 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/backgorund_awesome_image.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/backgroud_comboset_amount_item.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/backgroud_ticket.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_awesome_card.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_circle.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_comboset_amount.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_dash.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_movie_seat_empty.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_movie_seat_token.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_movie_time.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_right_circle.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_ticket_available.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_ticket_reservet.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_ticket_selection.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_view_corner.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_viewpod_image.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/background_visa_card.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/drawable_xxxhdpi.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/ic_baseline_rate_us_white_24.xml" value="0.1" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/activity_add_new_credit.xml" value="0.17552083333333332" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/activity_awesome.xml" value="0.22" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/activity_choose_movie_time.xml" value="0.14666666666666667" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/activity_choose_payment.xml" value="0.29045643153526973" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/activity_choose_ticket_activity.xml" value="0.17552083333333332" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/activity_combo_set.xml" value="0.17552083333333332" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
@@ -29,10 +43,12 @@
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_day.xml" value="0.14666666666666667" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_movie_category.xml" value="0.16666666666666666" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_movie_item.xml" value="0.14130434782608695" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_movie_seat.xml" value="0.17552083333333332" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_movie_time.xml" value="0.17447916666666666" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_movie_time_item.xml" value="0.17552083333333332" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_payment_method.xml" value="0.5" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_ticket.xml" value="0.17447916666666666" />
+        <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_holder_visa.xml" value="0.3333333333333333" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_pod_movie_list.xml" value="0.14130434782608695" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/layout/view_pod_movie_time.xml" value="0.17552083333333332" />
         <entry key="..\:/Flutter/MovieTicket/app/src/main/res/menu/main.xml" value="0.17447916666666666" />

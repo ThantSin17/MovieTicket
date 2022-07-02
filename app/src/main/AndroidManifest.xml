@@ -14,26 +14,39 @@
         android:theme="@style/Theme.MovieTicket"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.AddNewCreditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ChoosePaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AwesomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.ComboSetActivity"
             android:exported="false" />
+
         <activity
-            android:name=".ui.activity.ChooseTicketActivity"
-            android:exported="false" />
+            android:name=".ui.activity.ChooseMovieSeatActivity"
+            android:exported="true" >
+
+        </activity>
+
         <activity
             android:name=".ui.activity.ChooseMovieTimeActivity"
-            android:exported="true">
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.MovieDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WelcomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.activity.MovieDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.WelcomeActivity"
-            android:exported="true" />
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="false" />

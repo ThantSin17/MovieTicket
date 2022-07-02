@@ -31,4 +31,6 @@
     <string name="lbl_get_your_ticket">Get your ticket</string>
     <string name="lbl_next">Next</string>
     <string name="lbl_payment_method">Payment Method</string>
+    <string name="lbl_payment_amount">Payment amount</string>
+    <string name="lbl_enter_promo_code">Enter Promo Code</string>
 </resources>

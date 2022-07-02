@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.ChoosePaymentActivity">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:layout_marginTop="?actionBarSize"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_outline_chevron_left_black_24"
+         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPaymentAmountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivBack"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:textSize="@dimen/text_regular_2x"
+        android:text="@string/lbl_payment_amount"
+        android:textColor="@color/secondaryTextBlackColor" />
+
+    <TextView
+        android:id="@+id/tvPaymentAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPaymentAmountLabel"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="$ 926.21"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_heading_2x"
+        android:textStyle="bold" />
+    <alirezat775.lib.carouselview.CarouselView
+        android:id="@+id/rvVisaCard"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_below="@id/tvPaymentAmount"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/view_holder_visa"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="200dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvVisaCard"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        app:srcCompat="@drawable/ic_round_add_circle_24"
+        app:tint="@color/green" />
+
+    <TextView
+        android:id="@+id/tvAddNewCardLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvVisaCard"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_toEndOf="@id/ivAdd"
+        android:text="Add New Card"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_btn_getTicket"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:text="Confirm"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold" />
+</RelativeLayout>

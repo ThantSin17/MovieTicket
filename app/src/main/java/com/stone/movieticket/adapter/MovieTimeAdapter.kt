@@ -8,7 +8,8 @@ import com.stone.movieticket.view_holder.MovieTimeViewHolder
 import kotlinx.android.synthetic.main.view_holder_movie_time.view.*
 
 class MovieTimeAdapter():RecyclerView.Adapter<MovieTimeViewHolder>() {
-     val dataList = listOf(listOf("Available In", listOf("2D","3D","HMC")),
+     val dataList = listOf(
+         listOf("Available In", listOf("2D","3D","HMC")),
         listOf("GC : Golden City", listOf("9:30 AM","10:10AM","3:30","9:30 AM","10:10AM","3:30")),
         listOf("GC : West Point", listOf("3:30","9:30 AM","9:30 AM","10:10AM","10:10AM","3:30")),
     )

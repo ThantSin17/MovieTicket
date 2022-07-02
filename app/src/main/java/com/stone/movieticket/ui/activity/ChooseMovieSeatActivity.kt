@@ -8,22 +8,21 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
-import com.google.android.flexbox.*
 import com.stone.movieticket.R
-import com.stone.movieticket.adapter.MovieTicketAdapter
-import kotlinx.android.synthetic.main.activity_choose_ticket_activity.*
+import com.stone.movieticket.adapter.MovieSeatAdapter
+import com.stone.movieticket.utils.DUMMY_SEAT_LIST
+import kotlinx.android.synthetic.main.activity_choose_movie_seats_activity.*
 
-class ChooseTicketActivity : AppCompatActivity() {
-    lateinit var mMovieTicketAdapter: MovieTicketAdapter
+class ChooseMovieSeatActivity : AppCompatActivity() {
+    lateinit var mMovieTicketAdapter: MovieSeatAdapter
     companion object{
         fun getInstance(context: Context):Intent{
-            return Intent(context,ChooseTicketActivity::class.java)
+            return Intent(context,ChooseMovieSeatActivity::class.java)
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_choose_ticket_activity)
+        setContentView(R.layout.activity_choose_movie_seats_activity)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(false)
@@ -43,31 +42,18 @@ class ChooseTicketActivity : AppCompatActivity() {
     }
 
     private fun setUpListener() {
-
+        ivBack.setOnClickListener { onBackPressed() }
+        btnBuyTicket.setOnClickListener {
+            startActivity(ComboSetActivity.getInstance(this))
+        }
     }
 
     private fun setUpRecyclerView() {
-        mMovieTicketAdapter = MovieTicketAdapter()
-        val size = mMovieTicketAdapter.itemCount
-//        val layoutManager = FlexboxLayoutManager(this,FlexDirection.COLUMN).apply {
-//            justifyContent = JustifyContent.CENTER
-//            alignItems = AlignItems.CENTER
-//            flexDirection = FlexDirection.ROW
-//            flexWrap = FlexWrap.WRAP
-//        }
-        val layoutManager =GridLayoutManager(this,8,GridLayoutManager.VERTICAL,true)
-
-//        layoutManager.spanSizeLookup = object :SpanSizeLookup(){
-//            override fun getSpanSize(position: Int): Int {
-//                if (position >50 ){
-//                    return 6
-//                }
-//                return 1
-//            }
-//        }
+        mMovieTicketAdapter = MovieSeatAdapter()
+        val layoutManager =GridLayoutManager(this,10)
         rvTicket.layoutManager= layoutManager
         rvTicket.adapter = mMovieTicketAdapter
-        rvTicket.setHasFixedSize(false)
+        mMovieTicketAdapter.setNewData(DUMMY_SEAT_LIST)
 
     }
 }

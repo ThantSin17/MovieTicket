@@ -48,4 +48,11 @@
         <item name="colorControlNormal">@android:color/darker_gray</item>
         <item name="colorControlActivated">@color/yellow</item>
     </style>
+    <style name="ImageView.Corner" parent="">
+        <item name="cornerSizeTopRight">@dimen/margin_medium_2</item>
+        <item name="cornerSizeTopLeft">@dimen/margin_medium_2</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
 </resources>

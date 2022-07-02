@@ -46,7 +46,10 @@ class ComboSetActivity : AppCompatActivity() {
 
     private fun setUpListener() {
         btnPay.setOnClickListener {
-
+            startActivity(ChoosePaymentActivity.getInstance(this))
+        }
+        ivBack.setOnClickListener {
+            onBackPressed()
         }
     }
 

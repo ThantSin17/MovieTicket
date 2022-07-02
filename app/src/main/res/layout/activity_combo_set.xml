@@ -25,20 +25,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvComboSet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvComboSet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/edPromoCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rvComboSet"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_marginTop="@dimen/margin_large"
-            android:layout_marginEnd="@dimen/margin_medium_2"
-            android:hint="Enter Promo Code" />
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edPromoCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvComboSet"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:paddingBottom="@dimen/margin_medium_3"
+                android:hint="@string/lbl_enter_promo_code" />
         <!--    <com.google.android.material.textfield.TextInputLayout-->
         <!--        android:id="@+id/ilPromoCode"-->
         <!--        android:layout_marginStart="@dimen/margin_medium_2"-->

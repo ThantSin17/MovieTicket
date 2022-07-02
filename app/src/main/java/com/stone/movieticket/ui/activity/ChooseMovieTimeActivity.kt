@@ -45,8 +45,9 @@ class ChooseMovieTimeActivity : AppCompatActivity() {
 
     private fun setUpListener() {
         btnNext.setOnClickListener {
-            startActivity(ComboSetActivity.getInstance(this))
+            startActivity(ChooseMovieSeatActivity.getInstance(this))
         }
+        ivBack.setOnClickListener { onBackPressed() }
     }
 
     private fun setUpViewPod() {

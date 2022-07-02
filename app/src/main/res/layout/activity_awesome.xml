@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:paddingStart="@dimen/margin_medium_2"
+        android:paddingEnd="@dimen/margin_medium_2"
+        tools:context=".ui.activity.AwesomeActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/margin_xlarge"
+            android:layout_height="@dimen/margin_xlarge"
+            android:layout_marginTop="?actionBarSize"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_round_clear_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAwesomeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivBack"
+            android:layout_centerHorizontal="true"
+            android:text="Awesome!"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_heading_2x"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTicketLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAwesomeLabel"
+            android:layout_centerHorizontal="true"
+            android:text="This is your ticket"
+            android:textColor="@color/secondaryTextBlackColor"
+            android:textSize="@dimen/text_regular_2x" />
+
+        <RelativeLayout
+            android:id="@+id/rlTicketLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTicketLabel"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:background="@drawable/background_awesome_card">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivMovie"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ImageView.Corner"
+                app:srcCompat="@drawable/doctor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivMovie"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="Detective Pikachu"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMovieTitle"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="105 M"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDaskLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMovieTitle"
+                android:layout_alignBaseline="@id/tvMovieDuration"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_toEndOf="@id/tvMovieDuration"
+                android:text="-"
+                android:textSize="@dimen/text_regular_2x" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCinemaName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMovieTitle"
+                android:layout_alignBaseline="@id/tvMovieDuration"
+                android:layout_toEndOf="@id/tvDaskLabel"
+                android:text="IMAX"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/viewDash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMovieDuration"
+                android:layout_marginTop="@dimen/margin_medium_2">
+
+                <View
+                    android:id="@+id/leftCircle"
+                    android:layout_width="15dp"
+                    android:layout_height="30dp"
+                    android:foreground="@drawable/background_left_circle" />
+
+                <View
+                    android:id="@+id/vDash"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_toStartOf="@id/rightCircle"
+                    android:layout_toEndOf="@id/leftCircle"
+                    android:background="@drawable/background_dash"
+                    android:layerType="software" />
+
+                <View
+                    android:id="@+id/rightCircle"
+                    android:layout_width="15dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:foreground="@drawable/background_right_circle" />
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBookNoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewDash"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Booking No"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBookingNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvBookNoLabel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="CN879898"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvShowTimeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvBookNoLabel"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Show Time - Date"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvShowTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvShowTimeLabel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="70:30 -10 MAY"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTheaterLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvShowTimeLabel"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Theater"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTheater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvTheaterLabel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="Galaxy Cinema Golden City"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvScreenLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTheaterLabel"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Screen"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvScreenLabel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="2"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRowLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvScreenLabel"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Row"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvRowLabel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="D"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSeatsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvRowLabel"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Seats"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSeats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvSeatsLabel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="5,6"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSeatsLabel"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Price"
+                android:textColor="@color/secondaryTextBlack30Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvPriceLabel"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="$40.00"
+                android:textColor="@color/secondaryTextBlackColor"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/viewDash2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPriceLabel"
+                android:layout_marginTop="@dimen/margin_medium_2">
+
+                <View
+                    android:id="@+id/leftCircle2"
+                    android:layout_width="15dp"
+                    android:layout_height="30dp"
+                    android:foreground="@drawable/background_left_circle" />
+
+                <View
+                    android:id="@+id/vDash2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_toStartOf="@id/rightCircle2"
+                    android:layout_toEndOf="@id/leftCircle2"
+                    android:background="@drawable/background_dash"
+                    android:layerType="software" />
+
+                <View
+                    android:id="@+id/rightCircle2"
+                    android:layout_width="15dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:foreground="@drawable/background_right_circle" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/viewDash2"
+                android:paddingBottom="@dimen/margin_medium_2"
+                app:srcCompat="@drawable/barcode" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

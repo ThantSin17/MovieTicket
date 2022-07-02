@@ -10,13 +10,7 @@ import kotlinx.android.synthetic.main.view_pod_movie_list.view.*
 
 class MovieTimeViewHolder(itemView: View, dataList: List<List<Any>>) : RecyclerView.ViewHolder(itemView) {
     lateinit var mMovieTimeItemAdapter: MovieTimeItemAdapter
-    init {
-        try {
 
-        }catch (e:Exception){
-            Toast.makeText(itemView.context, e.toString(), Toast.LENGTH_LONG).show()
-        }
-    }
     fun bindData(list:List<Any>){
         mMovieTimeItemAdapter = MovieTimeItemAdapter(list)
         itemView.rvMovieTime.adapter = mMovieTimeItemAdapter
