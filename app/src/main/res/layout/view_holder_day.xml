@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:padding="5dp"
     android:layout_marginStart="@dimen/margin_medium_2"
-    android:layout_height="70dp">
+    android:layout_height="@dimen/height_day">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvDayText"
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="We"
-        android:textColor="@color/secondaryTextBlackColor"
+        android:fontFamily="@font/montserrat_light"
         android:textSize="@dimen/text_regular_2x" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -22,6 +22,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/margin_medium"
         android:text="10"
-        android:textColor="@color/secondaryTextBlackColor"
         android:textSize="@dimen/text_regular_2x" />
 </RelativeLayout>

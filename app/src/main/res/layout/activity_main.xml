@@ -13,84 +13,85 @@
         android:layout_height="match_parent">
 
         <androidx.core.widget.NestedScrollView
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <RelativeLayout
-                android:id="@+id/rlToolBar"
-                android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginEnd="@dimen/margin_medium_2"
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:layout_marginTop="?actionBarSize">
+                android:layout_height="match_parent">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivDrawerMenu"
-                    android:layout_width="@dimen/margin_xlarge"
-                    android:layout_height="@dimen/margin_xlarge"
-                    android:src="@drawable/ic_menus"
-                    app:tint="@color/black" />
+                <RelativeLayout
+                    android:id="@+id/rlToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="?actionBarSize"
+                    android:layout_marginEnd="@dimen/margin_medium_2">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivSearch"
-                    android:layout_width="@dimen/margin_xlarge"
-                    android:layout_height="@dimen/margin_xlarge"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_baseline_search_24"
-                    app:tint="@color/black" />
-            </RelativeLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivDrawerMenu"
+                        android:layout_width="@dimen/margin_xlarge"
+                        android:layout_height="@dimen/margin_xlarge"
+                        android:src="@drawable/ic_menus"
+                        app:tint="@color/black" />
 
-            <RelativeLayout
-                android:id="@+id/rlAccount"
-                android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginEnd="@dimen/margin_medium_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rlToolBar">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivSearch"
+                        android:layout_width="@dimen/margin_xlarge"
+                        android:layout_height="@dimen/margin_xlarge"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_baseline_search_24"
+                        app:tint="@color/black" />
+                </RelativeLayout>
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/ivProfile"
-                    android:layout_width="@dimen/drawer_header_image_size"
-                    android:layout_height="@dimen/drawer_header_image_size"
-                    android:scaleType="centerCrop"
-                    app:shapeAppearanceOverlay="@style/roundImageView"
-                    app:srcCompat="@drawable/america" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvName"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/rlAccount"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/margin_medium_3"
-                    android:layout_toEndOf="@id/ivProfile"
-                    android:text="Hi Lily!"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_regular_3x"
-                    android:textStyle="bold" />
+                    android:layout_below="@id/rlToolBar"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginEnd="@dimen/margin_medium_2">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="@dimen/drawer_header_image_size"
+                        android:layout_height="@dimen/drawer_header_image_size"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/roundImageView"
+                        app:srcCompat="@drawable/america" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_medium_3"
+                        android:layout_toEndOf="@id/ivProfile"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Hi Lily!"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_heading_1x"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/vpNowShowing"
+                    layout="@layout/view_pod_movie_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlAccount"
+                    android:layout_marginTop="@dimen/margin_large" />
+
+                <include
+                    android:id="@+id/vpComingSoon"
+                    layout="@layout/view_pod_movie_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/vpNowShowing"
+                    android:layout_marginTop="@dimen/margin_large" />
+
             </RelativeLayout>
-
-            <include
-                android:id="@+id/vpNowShowing"
-                layout="@layout/view_pod_movie_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rlAccount"
-                android:layout_marginTop="@dimen/margin_large" />
-
-            <include
-                android:id="@+id/vpComingSoon"
-                layout="@layout/view_pod_movie_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/vpNowShowing"
-                android:layout_marginTop="@dimen/margin_large" />
-
-        </RelativeLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -99,9 +100,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start">
-        <include layout="@layout/layout_drawer"
+
+        <include
+            android:id="@+id/layoutDrawer"
+            layout="@layout/layout_drawer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

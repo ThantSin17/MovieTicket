@@ -18,7 +18,6 @@
             android:id="@+id/ivBack"
             android:layout_width="@dimen/margin_xlarge"
             android:layout_height="@dimen/margin_xlarge"
-            android:layout_marginTop="?actionBarSize"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_round_clear_24" />
 
@@ -340,6 +339,7 @@
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBar"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_below="@id/viewDash2"

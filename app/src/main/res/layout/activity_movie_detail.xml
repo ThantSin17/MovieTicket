@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#EDE9E9"
+    android:background="@color/background_movie_deatils"
     android:layout_height="match_parent"
     tools:context=".ui.activity.MovieDetailActivity">
 
@@ -16,11 +16,11 @@
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:contentScrim="#EDE9E9"
+            app:contentScrim="@color/background_movie_deatils"
             app:titleCollapseMode="scale"
             android:layout_width="match_parent"
             android:minHeight="?actionBarSize"
-            android:layout_height="400dp">
+            android:layout_height="@dimen/height_movie_details_collpsing_layout">
 
 
             <FrameLayout
@@ -45,15 +45,14 @@
                     android:scaleType="centerCrop"
                     app:layout_collapseMode="parallax"
                     android:elevation="30dp"
-                    app:tint="@color/secondaryTextBlackColor"
                     app:srcCompat="@drawable/ic_outline_chevron_left_black_24"
                      />
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivPlayBtn"
                     app:srcCompat="@drawable/ic_round_play_circle_outline_24"
                     android:layout_gravity="center"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"/>
+                    android:layout_width="@dimen/height_btn_getTicket"
+                    android:layout_height="@dimen/height_btn_getTicket"/>
 
             </FrameLayout>
 
@@ -77,6 +76,7 @@
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_large"
                 android:layout_marginEnd="@dimen/margin_medium_2"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="Doctor Strange"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_heading_1x"
@@ -89,9 +89,10 @@
                 android:layout_below="@id/tvMovieName"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                android:fontFamily="@font/mono"
+                android:fontFamily="@font/montserrat_medium"
                 android:text="1h 45m"
-                android:textSize="@dimen/text_regular_2x" />
+                android:textSize="@dimen/text_regular"
+                android:textStyle="bold" />
 
 <!--            <RatingBar-->
 <!--                android:id="@+id/rbMovieRate"-->
@@ -125,9 +126,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/tvDuration"
                 android:layout_toEndOf="@id/rbMovieRate"
+                android:fontFamily="@font/montserrat_medium"
                 android:text="IMDB 6.6"
-                android:fontFamily="@font/roboto_regular"
-                android:textSize="@dimen/text_regular_2x" />
+                android:textSize="@dimen/text_regular"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvMovieCategory"
@@ -135,9 +137,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvDuration"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                android:paddingEnd="@dimen/margin_medium_2"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
+                android:paddingEnd="@dimen/margin_medium_2"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/view_holder_movie_category" />
 
@@ -146,21 +148,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rvMovieCategory"
-                android:textColor="@color/black"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
+                android:fontFamily="@font/montserrat_bold"
                 android:text="@string/lbl_plot_summary"
+                android:textColor="@color/black"
                 android:textSize="@dimen/text_regular_3x"
                 android:textStyle="bold" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPlotText"
-                android:text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tvPlotSummary"
                 android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginEnd="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:fontFamily="@font/montserrat_light"
+                android:lineSpacingExtra="5dp"
+                android:text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."
+                android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvCast"
@@ -170,20 +177,22 @@
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:text="@string/lbl_cast"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_regular_3x"
                 android:textStyle="bold" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tvCast"
                 android:layout_marginTop="@dimen/margin_medium_2"
-                tools:listitem="@layout/view_holder_cast"
-                android:paddingEnd="@dimen/margin_medium_2"
                 android:clipToPadding="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:paddingEnd="@dimen/margin_medium_2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/view_holder_cast" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
     <com.google.android.material.button.MaterialButton
@@ -192,9 +201,10 @@
         android:text="@string/lbl_get_your_ticket"
         android:textAllCaps="false"
         android:textStyle="bold"
-        android:layout_marginBottom="@dimen/margin_medium_3"
+        android:layout_marginBottom="?actionBarSize"
         android:layout_marginStart="@dimen/margin_medium_2"
         android:layout_marginEnd="@dimen/margin_medium_2"
+        app:fontFamily="@font/montserrat_medium"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_btn_getTicket"/>
 

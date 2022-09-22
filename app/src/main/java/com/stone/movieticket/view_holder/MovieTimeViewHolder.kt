@@ -1,18 +1,24 @@
 package com.stone.movieticket.view_holder
 
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.stone.movieticket.adapter.DayListAdapter
 import com.stone.movieticket.adapter.MovieTimeItemAdapter
+import com.stone.movieticket.data.vos.CinemaVO
+import com.stone.movieticket.delegate.TimeSlotDelegate
 import kotlinx.android.synthetic.main.view_holder_movie_time.view.*
-import kotlinx.android.synthetic.main.view_pod_movie_list.view.*
 
-class MovieTimeViewHolder(itemView: View, dataList: List<List<Any>>) : RecyclerView.ViewHolder(itemView) {
-    lateinit var mMovieTimeItemAdapter: MovieTimeItemAdapter
+class MovieTimeViewHolder(itemView: View, timeSlotDelegate: TimeSlotDelegate) : RecyclerView.ViewHolder(itemView) {
 
-    fun bindData(list:List<Any>){
-        mMovieTimeItemAdapter = MovieTimeItemAdapter(list)
+    private lateinit var mMovieTimeItemAdapter:MovieTimeItemAdapter
+    init {
+         mMovieTimeItemAdapter = MovieTimeItemAdapter(timeSlotDelegate)
         itemView.rvMovieTime.adapter = mMovieTimeItemAdapter
+
+
+    }
+    fun bindData(cinema: CinemaVO){
+        itemView.tvTitle.text=cinema.cinema
+        mMovieTimeItemAdapter.setNewData(cinema)
+
     }
 }

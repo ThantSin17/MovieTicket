@@ -31,6 +31,7 @@ class WelcomeActivity : AppCompatActivity() {
     private fun setUpListener() {
         btnGetStart.setOnClickListener {
             startActivity(LoginActivity.getInstance(this))
+            finish()
         }
     }
 }

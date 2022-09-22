@@ -10,7 +10,6 @@
         android:id="@+id/ivBack"
         android:layout_width="@dimen/margin_xxlarge"
         android:layout_height="@dimen/margin_xxlarge"
-        android:layout_marginTop="?actionBarSize"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_outline_chevron_left_black_24" />
 
@@ -28,16 +27,17 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tfCardNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvCardNumberLabel"
-        android:layout_marginTop="@dimen/margin_medium_2"
+        android:inputType="number"
         android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginEnd="@dimen/margin_medium_2"
         android:paddingStart="@dimen/margin_medium_2"
         android:paddingEnd="@dimen/margin_medium_2"
         android:paddingBottom="@dimen/margin_medium_3"
-        android:layout_width="match_parent"
-        android:textSize="@dimen/text_regular_3x"
-        android:layout_height="wrap_content" />
+        android:textSize="@dimen/text_regular_3x" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvCardHolderLabel"
@@ -53,16 +53,16 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tfCardHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvCardHolderLabel"
-        android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginEnd="@dimen/margin_medium_2"
         android:paddingStart="@dimen/margin_medium_2"
         android:paddingEnd="@dimen/margin_medium_2"
         android:paddingBottom="@dimen/margin_medium_3"
-        android:layout_width="match_parent"
-        android:textSize="@dimen/text_regular_3x"
-        android:layout_height="wrap_content" />
+        android:textSize="@dimen/text_regular_3x" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvCardExpiredDateLabel"
@@ -78,17 +78,17 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tfExpired"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvCardExpiredDateLabel"
-        android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_toStartOf="@id/vCenter"
         android:paddingStart="@dimen/margin_medium_2"
         android:paddingEnd="@dimen/margin_medium_2"
         android:paddingBottom="@dimen/margin_medium_3"
-        android:layout_toStartOf="@id/vCenter"
-        android:layout_width="match_parent"
-        android:textSize="@dimen/text_regular_3x"
-        android:layout_height="wrap_content" />
+        android:textSize="@dimen/text_regular_3x" />
 
     <View
         android:id="@+id/vCenter"
@@ -112,17 +112,18 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tfCVC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvCardExpiredDateLabel"
-        android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
         android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_toEndOf="@id/vCenter"
+        android:inputType="number"
         android:paddingStart="@dimen/margin_medium_2"
         android:paddingEnd="@dimen/margin_medium_2"
         android:paddingBottom="@dimen/margin_medium_3"
-        android:layout_toEndOf="@id/vCenter"
-        android:layout_width="match_parent"
-        android:textSize="@dimen/text_regular_3x"
-        android:layout_height="wrap_content" />
+        android:textSize="@dimen/text_regular_3x" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAdd"

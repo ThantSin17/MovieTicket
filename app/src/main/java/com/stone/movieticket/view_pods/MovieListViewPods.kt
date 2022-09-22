@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.widget.RelativeLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.stone.movieticket.adapter.MovieAdapter
+import com.stone.movieticket.data.vos.MovieVO
 import com.stone.movieticket.delegate.MovieViewHolderDelegate
 import kotlinx.android.synthetic.main.view_pod_movie_list.view.*
 
@@ -30,5 +31,8 @@ class MovieListViewPods @JvmOverloads constructor(
         tvMovieCategory.text = titleText
         mDelegate = delegate
         setUpRecyclerView()
+    }
+    fun setNewData(movies:List<MovieVO>){
+        movieAdapter.setNewData(movies)
     }
 }

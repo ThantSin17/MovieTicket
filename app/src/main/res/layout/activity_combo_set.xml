@@ -10,7 +10,6 @@
         android:id="@+id/ivBack"
         android:layout_width="@dimen/margin_xxlarge"
         android:layout_height="@dimen/margin_xxlarge"
-        android:layout_marginTop="?actionBarSize"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_outline_chevron_left_black_24" />
 
@@ -21,7 +20,7 @@
         android:layout_below="@id/ivBack"
         android:fillViewport="true">
         <RelativeLayout
-            android:paddingBottom="120dp"
+            android:paddingBottom="@dimen/height_bottom_comboset"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -38,8 +37,9 @@
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_large"
                 android:layout_marginEnd="@dimen/margin_medium_2"
-                android:paddingBottom="@dimen/margin_medium_3"
-                android:hint="@string/lbl_enter_promo_code" />
+                android:fontFamily="@font/montserrat_light"
+                android:hint="@string/lbl_enter_promo_code"
+                android:paddingBottom="@dimen/margin_medium_3" />
         <!--    <com.google.android.material.textfield.TextInputLayout-->
         <!--        android:id="@+id/ilPromoCode"-->
         <!--        android:layout_marginStart="@dimen/margin_medium_2"-->
@@ -58,59 +58,62 @@
         <!--            android:background="@color/white"-->
         <!--            android:hint="Enter Promo Code" />-->
         <!--    </com.google.android.material.textfield.TextInputLayout>-->
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvLabelPromoCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/edPromoCode"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:text="Don't have any promo code ?"
-            android:textSize="@dimen/text_regular_2x" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelPromoCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edPromoCode"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:fontFamily="@font/montserrat_regular"
+                android:text="Don't have any promo code ?"
+                android:textSize="@dimen/text_regular_2x" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvGetPromoCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/tvLabelPromoCode"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_toEndOf="@id/tvLabelPromoCode"
-            android:text="Get it now"
-            android:textColor="@color/secondaryTextBlack80Color"
-            android:textSize="@dimen/text_regular_2x"
-            android:textStyle="bold" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGetPromoCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvLabelPromoCode"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/tvLabelPromoCode"
+                android:text="Get it now"
+                android:textColor="@color/secondaryTextBlack80Color"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold"
+                app:fontFamily="@font/montserrat_light" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvTotalAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvLabelPromoCode"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            android:text="Sub Total : 40$"
-            android:textColor="@color/green"
-            android:textSize="@dimen/text_regular_3x"
-            android:textStyle="bold" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLabelPromoCode"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="Sub Total : 0$"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold"
+                app:fontFamily="@font/montserrat_medium" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvPaymentMethod"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvTotalAmount"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            android:text="@string/lbl_payment_method"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_regular_3x"
-            android:textStyle="bold" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPaymentMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTotalAmount"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="@string/lbl_payment_method"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_regular_3x"
+                app:fontFamily="@font/montserrat_medium" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvPaymentMethod"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvPaymentMethod"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPaymentMethod"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginBottom="@dimen/margin_medium_2" />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
@@ -123,8 +126,9 @@
         android:layout_gravity="bottom"
         android:layout_marginStart="@dimen/margin_medium_2"
         android:layout_marginEnd="@dimen/margin_medium_2"
-        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:layout_marginBottom="?actionBarSize"
         android:text="Pay"
+        app:fontFamily="@font/montserrat_bold"
         android:textAllCaps="false"
         android:textStyle="bold" />
 </RelativeLayout>

@@ -59,20 +59,23 @@
             android:layout_marginTop="@dimen/text_regular_3x"
             android:clipToPadding="false"
             android:orientation="vertical"
+            tools:listitem="@layout/view_holder_movie_time"
             android:paddingEnd="@dimen/margin_medium_2"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNext"
-            android:layout_gravity="bottom"
-            android:text="@string/lbl_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_btn_getTicket"
             android:layout_alignParentBottom="true"
-            android:textAllCaps="false"
-            android:textStyle="bold"
-            android:layout_marginBottom="@dimen/margin_xxlarge"
+            android:layout_gravity="bottom"
             android:layout_marginStart="@dimen/margin_medium_2"
             android:layout_marginEnd="@dimen/margin_medium_2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_btn_getTicket"/>
+            android:layout_marginBottom="?actionBarSize"
+            android:text="@string/lbl_next"
+            app:fontFamily="@font/montserrat_medium"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 </RelativeLayout>

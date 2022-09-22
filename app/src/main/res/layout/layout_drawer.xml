@@ -8,7 +8,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:id="@+id/rlHeader"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/margin_top_drawer_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/drawer_header_height">
 
@@ -38,7 +38,8 @@
                 android:text="Lily Johnson"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_regular_3x"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="@dimen/text_regular_2x"
                 android:textStyle="bold" />
 
             <RelativeLayout
@@ -50,11 +51,13 @@
                     android:id="@+id/tvEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
                     android:gravity="center"
                     android:text="lilyjohnson@gmail.com"
                     android:textAlignment="center"
+                    android:textStyle="bold"
                     android:textColor="@color/secondaryTextColor"
-                    android:textSize="@dimen/text_regular" />
+                    android:textSize="@dimen/text_small" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvEdit"
@@ -63,6 +66,7 @@
                     android:layout_alignParentEnd="true"
                     android:text="@string/lbl_edit"
                     android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:textStyle="bold"
                     android:textColor="@color/secondaryTextColor"
                     android:textSize="@dimen/text_regular" />
             </RelativeLayout>
@@ -81,8 +85,8 @@
         android:layout_marginStart="@dimen/margin_medium_2">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/margin_xlarge"
-            android:layout_height="@dimen/margin_xlarge"
+            android:layout_width="@dimen/height_image_drawer_item"
+            android:layout_height="@dimen/height_image_drawer_item"
             android:src="@drawable/ic_baseline_local_offer_24"
             app:tint="@color/white" />
 
@@ -94,8 +98,10 @@
             android:layout_marginStart="@dimen/margin_large"
             android:gravity="center"
             android:text="@string/lbl_promotion_code"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
             android:textColor="@color/secondaryTextColor"
-            android:textSize="@dimen/text_regular_3x" />
+            android:textSize="@dimen/text_regular_2x" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,8 +113,8 @@
         android:layout_marginStart="@dimen/margin_medium_2">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/margin_xlarge"
-            android:layout_height="@dimen/margin_xlarge"
+            android:layout_width="@dimen/height_image_drawer_item"
+            android:layout_height="@dimen/height_image_drawer_item"
             android:src="@drawable/ic_baseline_g_translate_24"
             app:tint="@color/white" />
 
@@ -120,8 +126,10 @@
             android:layout_marginStart="@dimen/margin_large"
             android:gravity="center"
             android:text="@string/lbl_select_a_language"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
             android:textColor="@color/secondaryTextColor"
-            android:textSize="@dimen/text_regular_3x" />
+            android:textSize="@dimen/text_regular_2x" />
     </LinearLayout>
 
     <LinearLayout
@@ -133,8 +141,8 @@
         android:layout_marginStart="@dimen/margin_medium_2">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/margin_xlarge"
-            android:layout_height="@dimen/margin_xlarge"
+            android:layout_width="@dimen/height_image_drawer_item"
+            android:layout_height="@dimen/height_image_drawer_item"
             android:src="@drawable/ic_baseline_assignment_24"
             app:tint="@color/white" />
 
@@ -146,8 +154,10 @@
             android:layout_marginStart="@dimen/margin_large"
             android:gravity="center"
             android:text="@string/lbl_term_of_services"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
             android:textColor="@color/secondaryTextColor"
-            android:textSize="@dimen/text_regular_3x" />
+            android:textSize="@dimen/text_regular_2x" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llHelp"
@@ -159,15 +169,17 @@
         <androidx.appcompat.widget.AppCompatImageView
             app:tint="@color/white"
             android:src="@drawable/ic_round_help_24"
-            android:layout_width="@dimen/margin_xlarge"
-            android:layout_height="@dimen/margin_xlarge"/>
+            android:layout_width="@dimen/height_image_drawer_item"
+            android:layout_height="@dimen/height_image_drawer_item"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvHelp"
             android:gravity="center"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/margin_large"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
             android:textColor="@color/secondaryTextColor"
-            android:textSize="@dimen/text_regular_3x"
+            android:textSize="@dimen/text_regular_2x"
             android:text="@string/lbl_help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -182,15 +194,17 @@
         <androidx.appcompat.widget.AppCompatImageView
             app:tint="@color/white"
             android:src="@drawable/ic_baseline_rate_us_white_24"
-            android:layout_width="@dimen/margin_xlarge"
-            android:layout_height="@dimen/margin_xlarge"/>
+            android:layout_width="@dimen/height_image_drawer_item"
+            android:layout_height="@dimen/height_image_drawer_item"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvRateUs"
             android:gravity="center"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/margin_large"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
             android:textColor="@color/secondaryTextColor"
-            android:textSize="@dimen/text_regular_3x"
+            android:textSize="@dimen/text_regular_2x"
             android:text="@string/lbl_rate_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -206,15 +220,17 @@
         <androidx.appcompat.widget.AppCompatImageView
             app:tint="@color/white"
             android:src="@drawable/ic_baseline_login_24"
-            android:layout_width="@dimen/margin_xlarge"
-            android:layout_height="@dimen/margin_xlarge"/>
+            android:layout_width="@dimen/height_image_drawer_item"
+            android:layout_height="@dimen/height_image_drawer_item"/>
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvLogOut"
             android:gravity="center"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/margin_large"
+            android:fontFamily="@font/montserrat_bold"
+            android:textStyle="bold"
             android:textColor="@color/secondaryTextColor"
-            android:textSize="@dimen/text_regular_3x"
+            android:textSize="@dimen/text_regular_2x"
             android:text="@string/lbl_log_out"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

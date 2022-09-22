@@ -1,5 +1,5 @@
 package com.stone.movieticket.delegate
 
 interface MovieViewHolderDelegate{
-    fun onTapMovie()
+    fun onTapMovie(id: Int)
 }

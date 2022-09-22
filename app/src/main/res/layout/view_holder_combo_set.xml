@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="@dimen/margin_medium_2"
     android:layout_marginStart="@dimen/margin_medium_2"
     android:layout_marginEnd="@dimen/margin_medium_2">
@@ -13,8 +14,9 @@
         android:layout_marginBottom="@dimen/margin_medium"
         android:text="Combo Set M"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_regular_3x"
-        android:textStyle="bold" />
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        app:fontFamily="@font/montserrat_regular" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvComboSetAmount"
@@ -23,9 +25,10 @@
         android:layout_alignBottom="@id/tvComboSetTitle"
         android:layout_alignParentEnd="true"
         android:gravity="center"
-        android:textColor="@color/black"
         android:text="15 $"
-        android:textSize="@dimen/text_regular_3x" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_3x"
+        app:fontFamily="@font/montserrat_medium" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvComboSetDescription"
@@ -33,10 +36,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvComboSetTitle"
         android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_alignParentStart="true"
         android:layout_toStartOf="@id/llChooseComboSet"
+        android:text="Combo opcorn X1"
         android:textColor="@color/secondaryTextBlackColor"
-        android:text="Combo Size M 220z. Coke (X1) and medium Popcorn X1"
-        android:textSize="@dimen/text_regular_2x" />
+        android:textSize="@dimen/text_regular"
+        app:fontFamily="@font/montserrat_light" />
 
     <LinearLayout
         android:id="@+id/llChooseComboSet"
@@ -50,6 +55,7 @@
         android:weightSum="3">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remove"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -60,6 +66,7 @@
             android:text="-" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/value"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -69,6 +76,7 @@
             android:text="0" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/plus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

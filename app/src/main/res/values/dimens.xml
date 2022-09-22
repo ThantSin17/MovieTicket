@@ -28,9 +28,22 @@
     <dimen name="text_big">40sp</dimen>
     <dimen name="text_big_2x">60sp</dimen>
     <dimen name="text_big_3x">80sp</dimen>
-    <dimen name="drawer_header_height">60dp</dimen>
-    <dimen name="drawer_header_image_size">60dp</dimen>
+    <dimen name="drawer_header_height">56dp</dimen>
+    <dimen name="drawer_header_image_size">56dp</dimen>
     <dimen name="height_btn_getTicket">70dp</dimen>
     <dimen name="width_combo_set_amount">120dp</dimen>
     <dimen name="width_green_line">60dp</dimen>
+    <dimen name="height_welcome_image">500dp</dimen>
+    <dimen name="width_movie_view_holder">170</dimen>
+    <dimen name="width_movie_image">150dp</dimen>
+    <dimen name="height_movie_image">200dp</dimen>
+    <dimen name="margin_top_drawer_header">100dp</dimen>
+    <dimen name="height_image_drawer_item">28dp</dimen>
+    <dimen name="height_movie_details_collpsing_layout">400dp</dimen>
+    <dimen name="width_movie_category">100dp</dimen>
+    <dimen name="height_movie_category">50dp</dimen>
+    <dimen name="width_cast_item">100dp</dimen>
+    <dimen name="height_day">70dp</dimen>
+    <dimen name="height_bottom_comboset">120dp</dimen>
+    <dimen name="visa_image_sixe">50dp</dimen>
 </resources>

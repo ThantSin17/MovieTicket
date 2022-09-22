@@ -4,19 +4,59 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.stone.movieticket.R
+import com.stone.movieticket.data.vos.DateVO
+import com.stone.movieticket.delegate.ChooseDateDelegate
 import kotlinx.android.synthetic.main.activity_choose_movie_time.view.*
 import kotlinx.android.synthetic.main.view_holder_day.view.*
 
-class DayListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class DayListViewHolder(itemView: View, chooseDateDelegate: ChooseDateDelegate) : RecyclerView.ViewHolder(itemView) {
+   private var dateVO:DateVO?=null
+    fun bindData(dateVO: DateVO) {
+        this.dateVO=dateVO;
+        if (dateVO.isSelected){
+            itemView.tvDayText.apply {
+                this.setTextColor(ContextCompat.getColor(
+                    itemView.context,
+                    R.color.white)
+                )
+                text=dateVO.date
+                textSize=20f
+            }
+            itemView.tvDateText.apply {
+                this.setTextColor(ContextCompat.getColor(
+                    itemView.context,
+                    R.color.white)
+
+                )
+                text=dateVO.day
+                this.textSize=20f
+            }
+        }else{
+            itemView.tvDayText.apply {
+                this.setTextColor(ContextCompat.getColor(
+                    itemView.context,
+                    R.color.secondaryTextWhite30Color)
+                )
+
+                text=dateVO.date
+                this.textSize=18f
+            }
+            itemView.tvDateText.apply {
+                this.setTextColor(ContextCompat.getColor(
+                    itemView.context,
+                    R.color.secondaryTextWhite30Color)
+                )
+                text=dateVO.day
+                this.textSize=18f
+            }
+        }
+
+    }
 
     init {
-//        itemView.setOnClickListener {
-//            itemView.tvDayText.apply {
-//                setTextColor(ContextCompat.getColor(itemView.context, R.color.white))
-//            }
-//            itemView.tvDateText.apply {
-//                setTextColor(ContextCompat.getColor(itemView.context, R.color.white))
-//            }
-//        }
+        itemView.setOnClickListener {
+
+            dateVO?.let { it1 -> chooseDateDelegate.chooseDate(it1.id) }
+        }
     }
 }

@@ -11,24 +11,30 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivMain"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="@dimen/height_welcome_image"
         android:layout_marginTop="@dimen/margin_medium_2"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_couple" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvWelcome"
-        android:text="@string/lbl_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/ivMain"
         android:layout_centerHorizontal="true"
+        android:text="@string/lbl_welcome"
+        android:fontFamily="@font/montserrat_bold"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_heading_2x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textSize="@dimen/text_heading_1x" />
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvWelcomeText"
         android:text="@string/lbl_hello_welcome_to_galaxy_app"
         android:layout_below="@id/tvWelcome"
-        android:textSize="@dimen/text_regular_2x"
+        android:fontFamily="@font/montserrat_light"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular"
         android:textColor="@color/secondaryTextColor"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
@@ -40,14 +46,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/margin_medium_3"
-        android:layout_marginEnd="@dimen/margin_medium_3"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginEnd="@dimen/margin_xlarge"
         android:layout_marginBottom="@dimen/margin_xxlarge"
+        app:fontFamily="@font/montserrat_medium"
+        android:padding="@dimen/margin_medium_2"
         android:text="@string/lbl_get_started"
         android:textColor="@color/white"
+        android:textSize="@dimen/text_regular_2x"
         android:textStyle="bold"
-        android:padding="@dimen/margin_card_medium_2"
-        android:textSize="@dimen/text_regular_3x"
-        app:cornerRadius="5dp"
+        app:cornerRadius="@dimen/margin_medium"
         app:strokeColor="@color/white" />
 </RelativeLayout>

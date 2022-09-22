@@ -26,12 +26,13 @@
 
     </style>
     <style name="TabLayoutTextStyle">
-        <item name="android:textSize">@dimen/text_regular_3x</item>
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
         <item name="android:textStyle">bold</item>
     </style>
     <style name="roundedCornersImageView">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/margin_large</item>
+        <item name="cornerSize">10%</item>
     </style>
     <style name="roundImageView">
         <item name="cornerFamily">rounded</item>

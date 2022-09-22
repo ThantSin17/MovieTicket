@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/ivPayment"
+        android:fontFamily="@font/montserrat_light"
         android:text="Credit Card"
         android:textColor="@color/secondaryTextBlackColor"
         android:textSize="@dimen/text_regular_2x"
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tvPaymentTitle"
         android:layout_toEndOf="@id/ivPayment"
+        android:fontFamily="@font/montserrat_light"
         android:text="Visa, Master Card, JCB"
-        android:textSize="@dimen/text_regular_2x" />
+        android:textSize="@dimen/text_regular" />
 </RelativeLayout>

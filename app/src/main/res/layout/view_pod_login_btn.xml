@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.stone.movieticket.view_pods.LoginButtonViewPods xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFacebook"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:fontFamily="@font/montserrat_bold"
+        android:padding="@dimen/margin_medium_2"
+        android:text="@string/lbl_sign_in_with_facebook"
+        android:textColor="@color/secondaryTextBlack30Color"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/margin_medium"
+        app:icon="@drawable/facebook"
+        app:iconSize="@dimen/margin_large"
+        app:iconTint="@null"
+        app:strokeColor="@color/secondaryTextColor" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGoogle"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFacebook"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:fontFamily="@font/montserrat_bold"
+        android:padding="@dimen/margin_medium_2"
+        android:text="@string/lbl_sign_in_with_google"
+        android:textColor="@color/secondaryTextBlack30Color"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/margin_medium"
+        app:icon="@drawable/google"
+        app:iconSize="@dimen/margin_large"
+        app:iconTint="@null"
+        app:strokeColor="@color/secondaryTextColor" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnGoogle"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        app:fontFamily="@font/montserrat_medium"
+        android:padding="@dimen/margin_medium_2"
+        android:text="@string/lbl_confirm"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/margin_medium" />
+</com.stone.movieticket.view_pods.LoginButtonViewPods>

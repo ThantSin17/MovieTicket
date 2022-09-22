@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/rlRegister"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="@dimen/margin_large"
     tools:context=".ui.fragment.LoginFragment">
@@ -10,29 +11,33 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvEmailText"
         android:text="@string/lbl_email"
-        android:textSize="@dimen/text_regular_2x"
-        android:textColor="@color/secondaryTextBlackColor"
+        android:textSize="@dimen/text_regular"
+        android:textColor="@color/secondaryTextBlack30Color"
+        android:fontFamily="@font/montserrat_medium"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvEmailText"
-        android:inputType="textEmailAddress"
         android:includeFontPadding="true"
+        android:inputType="textEmailAddress"
         android:paddingStart="@dimen/margin_medium"
         android:paddingEnd="@dimen/margin_medium"
-        android:textSize="@dimen/text_regular_3x"
         android:paddingBottom="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="@dimen/text_regular_2x" />
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvPasswordText"
         android:text="@string/lbl_password"
         android:layout_marginTop="@dimen/margin_large"
         android:layout_below="@id/editEmail"
-        android:textSize="@dimen/text_regular_2x"
-        android:textColor="@color/secondaryTextBlackColor"
+        android:fontFamily="@font/montserrat_medium"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular"
+        android:textColor="@color/secondaryTextBlack30Color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -46,67 +51,69 @@
         android:paddingStart="@dimen/margin_medium"
         android:paddingEnd="@dimen/margin_medium_2"
         android:paddingBottom="20dp"
-        android:textSize="@dimen/text_regular_3x" />
+        android:textSize="@dimen/text_regular_2x" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNameLabel"
+        android:text="@string/lbl_name"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_below="@id/editPassword"
+        android:fontFamily="@font/montserrat_medium"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular"
+        android:textColor="@color/secondaryTextBlack30Color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNameLabel"
+        android:includeFontPadding="true"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium_2"
+        android:paddingBottom="20dp"
+        android:textSize="@dimen/text_regular_2x" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPhoneNumberLabel"
+        android:text="Phone Number"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_below="@id/editName"
+        android:fontFamily="@font/montserrat_medium"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular"
+        android:textColor="@color/secondaryTextBlack30Color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPhoneNumberLabel"
+        android:includeFontPadding="true"
+        android:paddingStart="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_medium_2"
+        android:paddingBottom="20dp"
+        android:textSize="@dimen/text_regular_2x" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvGoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editPassword"
+        android:layout_below="@id/editPhone"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="@dimen/margin_xlarge"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat_medium"
         android:text="@string/lbl_already_account"
-        android:textColor="@color/secondaryTextBlackColor"
-        android:textSize="@dimen/text_regular_2x" />
+        android:textColor="@color/secondaryTextBlack30Color"
+        android:textSize="@dimen/text_regular" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnFacebook"
-        style="@style/Widget.Material3.Button.OutlinedButton"
+    <include
+        layout="@layout/view_pod_login_btn"
+        android:id="@+id/vpRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvGoLogin"
-        android:layout_marginStart="@dimen/margin_medium_2"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginEnd="@dimen/margin_medium_2"
-        android:padding="@dimen/margin_medium_2"
-        android:text="@string/lbl_sign_up_with_facebook"
-        android:textColor="@color/secondaryTextBlackColor"
-        android:textSize="@dimen/text_regular_3x"
-        app:cornerRadius="@dimen/margin_medium"
-        app:icon="@drawable/ic_facebook"
-        app:iconSize="@dimen/margin_xlarge"
-        app:iconTint="@null"
-        app:strokeColor="@color/secondaryTextColor" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGoogle"
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnFacebook"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium_2"
-        android:layout_marginEnd="@dimen/margin_medium_2"
-        android:padding="@dimen/margin_medium_2"
-        android:text="@string/lbl_sign_up_with_google"
-        android:textColor="@color/secondaryTextBlackColor"
-        android:textSize="@dimen/text_regular_3x"
-        app:cornerRadius="@dimen/margin_medium"
-        app:icon="@drawable/ic_google"
-        app:iconSize="@dimen/margin_xlarge"
-        app:iconTint="@null"
-        app:strokeColor="@color/secondaryTextColor" />
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRegister"
-        android:layout_below="@id/btnGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        app:cornerRadius="@dimen/margin_medium"
-        android:text="@string/lbl_register"
-        android:padding="@dimen/margin_medium_3"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginStart="@dimen/margin_medium_2"
-        android:layout_marginEnd="@dimen/margin_medium_2"
-        />
+        android:layout_below="@id/tvGoLogin" />
 </RelativeLayout>

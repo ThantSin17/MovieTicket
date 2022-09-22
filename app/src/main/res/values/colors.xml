@@ -22,4 +22,5 @@
 
     <color name="movie_seat_taken_color">#8291b2</color>
     <color name="movie_seat_available_color">#d1d8eb</color>
+    <color name="background_movie_deatils">#EDE9E9</color>
 </resources>
