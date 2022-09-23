@@ -27,7 +27,7 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
     private lateinit var dateVO: DateVO
     private lateinit var timeslotVO: TimeslotVO
     var selectedSeats = ""
-    var ticketPrice=0
+    var ticketPrice = 0
     private val mMovieTicketModel: MovieTicketModel = MovieTicketModelImpl
     private val movieSeats: MutableList<MovieSeatVO> = mutableListOf()
     private val selectedMovieSeats: MutableList<MovieSeatVO> = mutableListOf()
@@ -58,14 +58,14 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_movie_seats_activity)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.setDecorFitsSystemWindows(false)
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-            )
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            window.setDecorFitsSystemWindows(false)
+//        } else {
+//            window.setFlags(
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+//            )
+//        }
         //status bar icon color
         val docker = window.decorView
         val wic = WindowInsetsControllerCompat(window, docker)
@@ -95,9 +95,13 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
                 bindMovieSeatData(it)
             },
             onFailure = {
-
+                showMessage(it)
             }
         )
+    }
+
+    private fun showMessage(e: String) {
+        Toast.makeText(applicationContext, e, Toast.LENGTH_SHORT).show()
     }
 
     private fun bindMovieSeatData(movieSeatList: List<List<MovieSeatVO>>) {
@@ -114,22 +118,22 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
     private fun setUpListener() {
         ivBack.setOnClickListener { onBackPressed() }
         btnBuyTicket.setOnClickListener {
-            if (selectedSeats.isNotEmpty()){
-                val obj=JSONObject()
-                obj.put("cinema_day_timeslot_id",timeslotVO.cinemaDayTimeslotId)
-                obj.put("seat_number",selectedSeats.dropLast(1))
-                obj.put("booking_date",dateVO.time)
-                obj.put("movie_id",movieVO.id)
-                obj.put("cinema_id",cinemaVO.cinemaId)
-                obj.put("cinema",cinemaVO.cinema)
-                obj.put("moviePoster",movieVO.posterPath)
-                obj.put("movieName",movieVO.originalTitle)
-                obj.put("duration",movieVO.runtime.toString())
+            if (selectedSeats.isNotEmpty()) {
+                val obj = JSONObject()
+                obj.put("cinema_day_timeslot_id", timeslotVO.cinemaDayTimeslotId)
+                obj.put("seat_number", selectedSeats.dropLast(1))
+                obj.put("booking_date", dateVO.time)
+                obj.put("movie_id", movieVO.id)
+                obj.put("cinema_id", cinemaVO.cinemaId)
+                obj.put("cinema", cinemaVO.cinema)
+                obj.put("moviePoster", movieVO.posterPath)
+                obj.put("movieName", movieVO.originalTitle)
+                obj.put("duration", movieVO.runtime.toString())
 //                Toast.makeText(applicationContext, movieVO.runtime.toString(), Toast.LENGTH_SHORT).show()
-            startActivity(ComboSetActivity.getInstance(this,obj.toString(), ticketPrice))
-            }
-            else
-                Toast.makeText(applicationContext, "Please choose your seats!!", Toast.LENGTH_SHORT).show()
+                startActivity(ComboSetActivity.getInstance(this, obj.toString(), ticketPrice))
+            } else
+                Toast.makeText(applicationContext, "Please choose your seats!!", Toast.LENGTH_SHORT)
+                    .show()
         }
     }
 
@@ -183,16 +187,16 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
 
     private fun updateSeatData() {
 
-        tvSeats.text=""
-        selectedSeats=""
+        tvSeats.text = ""
+        selectedSeats = ""
 
-        tvTicket.text= selectedMovieSeats.count().toString()
+        tvTicket.text = selectedMovieSeats.count().toString()
         for (movieSeatVO in selectedMovieSeats) {
             selectedSeats += "${movieSeatVO.seatName},"
             tvSeats.text = selectedSeats
-            ticketPrice+=movieSeatVO.price
+            ticketPrice += movieSeatVO.price
         }
-        btnBuyTicket.text="Buy Ticket $ $ticketPrice"
+        btnBuyTicket.text = "Buy Ticket $ $ticketPrice"
     }
 
 }

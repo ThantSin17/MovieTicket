@@ -46,6 +46,7 @@ interface MovieTicketDataAgent {
         onFailure: (String) -> Unit
     )
     fun getMovieSeats(
+        token: String,
         timeSlotId:String,
         movieDate:String,
         onSuccess: (List<List<MovieSeatVO>>) -> Unit,

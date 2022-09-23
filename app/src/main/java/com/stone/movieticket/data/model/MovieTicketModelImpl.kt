@@ -147,12 +147,13 @@ object MovieTicketModelImpl : MovieTicketModel {
         movieId: String
     ) {
         token?.let {
-           val dateVo = mMovieTicketDatabase?.dateAndCinemaDao()?.getCinemaByDate(date = selectedDate)
+            val dateVo =
+                mMovieTicketDatabase?.dateAndCinemaDao()?.getCinemaByDate(date = selectedDate)
 
 //            dateVo?.cinema?.let { it1 -> onSuccess(it1) }
             onSuccess(dateVo?.cinema ?: listOf())
 
-            Log.i("Goooo",Gson().toJson(dateVo))
+            Log.i("Goooo", Gson().toJson(dateVo))
 
             mMovieDataAgent.getCinemaList(
                 token = it,
@@ -164,9 +165,10 @@ object MovieTicketModelImpl : MovieTicketModel {
                         cinema = it
                     )
                     try {
-                        mMovieTicketDatabase?.dateAndCinemaDao()?.insertDateAndCinema(dateAndCinemaVO)
-                    }catch (e:Exception){
-                        Log.i("Goooo",e.toString())
+                        mMovieTicketDatabase?.dateAndCinemaDao()
+                            ?.insertDateAndCinema(dateAndCinemaVO)
+                    } catch (e: Exception) {
+                        Log.i("Goooo", e.toString())
                     }
 
 
@@ -183,7 +185,15 @@ object MovieTicketModelImpl : MovieTicketModel {
         onSuccess: (List<List<MovieSeatVO>>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.getMovieSeats(timeSlotId, movieDate, onSuccess, onFailure)
+        token?.let {
+            mMovieDataAgent.getMovieSeats(
+                token = it,
+                timeSlotId = timeSlotId,
+                movieDate = movieDate,
+                onSuccess = onSuccess,
+                onFailure = onFailure
+            )
+        }
     }
 
     override fun getSnacks(onSuccess: (List<SnackVO>) -> Unit, onFailure: (String) -> Unit) {

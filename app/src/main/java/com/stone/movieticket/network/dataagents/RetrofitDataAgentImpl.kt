@@ -40,7 +40,7 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
                 response: Response<UserInfoResponse>
             ) {
 
-                Log.i("Gooo",Gson().toJson(response.errorBody()))
+                Log.i("Gooo", Gson().toJson(response.errorBody()))
                 if (response.isSuccessful) {
                     if (response.code() == 201) {
                         response.body()?.let { onSuccess(it) }
@@ -120,7 +120,6 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
     }
 
 
-
     override fun getProfile(
         token: String,
         onSuccess: (ProfileVO) -> Unit,
@@ -151,7 +150,7 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
         })
     }
 
-    override fun logout(token: String,onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
+    override fun logout(token: String, onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
         mMovieTicketApi?.logout(token = token)?.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(
                 call: Call<RegisterResponse>,
@@ -208,32 +207,42 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
         onSuccess: (List<CinemaVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieTicketApi?.getTimeSlotByDate(token = token, date = selectedDate, movieId = movieId)?.enqueue(
-            object : Callback<CinemaResponse> {
-                override fun onResponse(
-                    call: Call<CinemaResponse>,
-                    response: Response<CinemaResponse>
-                ) {
-                    if (response.isSuccessful) {
-                        response.body()?.data?.let { onSuccess(it) }
-//                        Log.i("Goooo", token)
-                    } else onFailure(response.message())
-                }
-
-                override fun onFailure(call: Call<CinemaResponse>, t: Throwable) {
-                    onFailure(t.message.toString())
-                }
-            }
+        mMovieTicketApi?.getTimeSlotByDate(
+            token = token,
+            date = selectedDate,
+            movieId = movieId
         )
+            ?.enqueue(
+                object : Callback<CinemaResponse> {
+                    override fun onResponse(
+                        call: Call<CinemaResponse>,
+                        response: Response<CinemaResponse>
+                    ) {
+                        if (response.isSuccessful) {
+                            response.body()?.data?.let { onSuccess(it) }
+//                        Log.i("Goooo", token)
+                        } else onFailure(response.message())
+                    }
+
+                    override fun onFailure(call: Call<CinemaResponse>, t: Throwable) {
+                        onFailure(t.message.toString())
+                    }
+                }
+            )
     }
 
     override fun getMovieSeats(
+        token: String,
         timeSlotId: String,
         movieDate: String,
         onSuccess: (List<List<MovieSeatVO>>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieTicketApi?.getMovieSeats(timeSlotId, movieDate)?.enqueue(
+        mMovieTicketApi?.getMovieSeats(
+            token = token,
+            timeSlotId = timeSlotId,
+            bookingDate = movieDate
+        )?.enqueue(
             object : Callback<MovieSeatResponse> {
                 override fun onResponse(
                     call: Call<MovieSeatResponse>,

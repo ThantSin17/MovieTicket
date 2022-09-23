@@ -19,6 +19,7 @@
     <color name="secondaryTextBlack30Color">#4D000000</color>
     <color name="secondaryTextWhite30Color">#4DFFFFFF</color>
     <color name="secondary_accent_color">#8675fc</color>
+    <color name="colorGrey">#9CA8C2</color>
 
     <color name="movie_seat_taken_color">#8291b2</color>
     <color name="movie_seat_available_color">#d1d8eb</color>

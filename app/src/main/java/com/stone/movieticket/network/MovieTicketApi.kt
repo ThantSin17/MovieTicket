@@ -63,6 +63,7 @@ interface MovieTicketApi {
 
     @GET(API_MOVIE_SEAT)
     fun getMovieSeats(
+        @Header(PARAM_AUTHORIZATION) token: String,
         @Query(PARAM_CINEMA_TIMESLOT_ID) timeSlotId: String,
         @Query(PARAM_BOOKING_DATE)bookingDate: String
     ):Call<MovieSeatResponse>
