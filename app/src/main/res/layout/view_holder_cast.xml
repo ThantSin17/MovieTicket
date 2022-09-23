@@ -12,4 +12,16 @@
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/roundImageView"
         app:srcCompat="@drawable/america" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivCast"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="Millie Bobby Brown"
+        android:layout_alignStart="@id/ivCast"
+        android:layout_alignEnd="@id/ivCast"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_smaller"
+        android:fontFamily="@font/montserrat_light"/>
 </RelativeLayout>

@@ -32,7 +32,7 @@ object MovieTicketModelImpl : MovieTicketModel {
         onSuccess(mMovieTicketDatabase?.movieDao()?.getMoviesByStatus(status) ?: listOf())
         mMovieDataAgent.getNowPlayingMovie(
             status = status,
-            onSuccess = {movieList->
+            onSuccess = { movieList ->
                 movieList.forEach {
                     it.type = status
                     mMovieTicketDatabase?.movieDao()?.insertSingleMovie(it)
@@ -124,7 +124,19 @@ object MovieTicketModelImpl : MovieTicketModel {
         onSuccess: (MovieVO) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.getMovieDetails(movieId, onSuccess, onFailure)
+        val movieFromDB: MovieVO? = mMovieTicketDatabase?.movieDao()?.getMovieById(movieId.toInt())
+        movieFromDB?.let(onSuccess)
+        mMovieDataAgent.getMovieDetails(
+            movieId = movieId,
+            onSuccess = { movieVO ->
+                movieFromDB?.let {
+                    movieVO.type = it.type
+                }
+                mMovieTicketDatabase?.movieDao()?.insertSingleMovie(movieVO)
+                onSuccess(movieVO)
+            },
+            onFailure = onFailure
+        )
     }
 
     override fun getCinemaList(

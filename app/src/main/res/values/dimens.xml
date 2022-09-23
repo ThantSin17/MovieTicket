@@ -42,7 +42,7 @@
     <dimen name="height_movie_details_collpsing_layout">400dp</dimen>
     <dimen name="width_movie_category">100dp</dimen>
     <dimen name="height_movie_category">50dp</dimen>
-    <dimen name="width_cast_item">100dp</dimen>
+    <dimen name="width_cast_item">60dp</dimen>
     <dimen name="height_day">70dp</dimen>
     <dimen name="height_bottom_comboset">120dp</dimen>
     <dimen name="visa_image_sixe">50dp</dimen>

@@ -19,5 +19,6 @@ class CastViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
                 .placeholder(R.drawable.ic_baseline_person_24)
             )
             .into(itemView.ivCast)
+        itemView.tvCastName.text = castVO.name
     }
 }
