@@ -18,7 +18,7 @@ interface UserInfoDao {
     @Query("DELETE FROM user")
     fun deleteUser()
 
-    @Query("SELECT token FROM user where id=:userId")
-    fun getToken(userId:Int): String?
+    @Query("SELECT token FROM user")
+    fun getToken(): String?
 
 }

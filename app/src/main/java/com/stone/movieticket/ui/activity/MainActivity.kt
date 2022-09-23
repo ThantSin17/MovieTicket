@@ -15,9 +15,12 @@ import com.bumptech.glide.Glide
 import com.stone.movieticket.R
 import com.stone.movieticket.data.model.MovieTicketModel
 import com.stone.movieticket.data.model.MovieTicketModelImpl
+import com.stone.movieticket.data.vos.NOW_PLAYING
 import com.stone.movieticket.data.vos.ProfileVO
+import com.stone.movieticket.data.vos.UserVO
 import com.stone.movieticket.delegate.MovieViewHolderDelegate
 import com.stone.movieticket.utils.BASE_PROFILE_URL
+import com.stone.movieticket.utils.PARAM_COMING_SOON
 import com.stone.movieticket.view_pods.MovieListViewPods
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.ivProfile
@@ -26,7 +29,7 @@ import kotlinx.android.synthetic.main.layout_drawer.view.*
 
 class MainActivity : AppCompatActivity(), MovieViewHolderDelegate {
     companion object {
-        fun getInstance(context: Context): Intent {
+        fun getIntent(context: Context): Intent {
             return Intent(context, MainActivity::class.java)
         }
     }
@@ -47,13 +50,16 @@ class MainActivity : AppCompatActivity(), MovieViewHolderDelegate {
         setUpNavigationDrawer()
         setUpListener()
         setUpViewPod()
+        setUpUserInfo()
 
         loadData()
     }
 
+
+
     private fun loadData() {
         mMovieTicketModel.getNowPlayingMovie(
-            status = "current",
+            status = NOW_PLAYING,
             onSuccess = {
 
                 nowShowing.setNewData(it)
@@ -64,7 +70,7 @@ class MainActivity : AppCompatActivity(), MovieViewHolderDelegate {
             }
         )
         mMovieTicketModel.getNowPlayingMovie(
-            status = "comingsoon",
+            status = PARAM_COMING_SOON,
             onSuccess = {
 
                 comingSoon.setNewData(it)
@@ -74,17 +80,17 @@ class MainActivity : AppCompatActivity(), MovieViewHolderDelegate {
                 showMessage(it)
             }
         )
-        mMovieTicketModel.getProfile(
-            onSuccess = {
-                        bindProfileData(it)
-            },
-            onFailure = {
-                showMessage(it)
-            }
-        )
+//        mMovieTicketModel.getProfile(
+//            onSuccess = {
+//                        bindProfileData(it)
+//            },
+//            onFailure = {
+//                showMessage(it)
+//            }
+//        )
     }
 
-    private fun bindProfileData(profileVO: ProfileVO) {
+    private fun bindProfileData(profileVO: UserVO) {
         Glide.with(this)
             .load("$BASE_PROFILE_URL${profileVO.profileImage}")
             .into(ivProfile)
@@ -114,6 +120,17 @@ class MainActivity : AppCompatActivity(), MovieViewHolderDelegate {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             )
         }
+    }
+
+    private fun setUpUserInfo() {
+        mMovieTicketModel.getProfile(
+            onSuccess = {
+                bindProfileData(it)
+            },
+            onFailure = {
+                showMessage(it)
+            }
+        )
     }
 
     private fun setUpListener() {

@@ -21,7 +21,7 @@ interface MovieTicketModel {
         onFailure:(String)->Unit
     )
     fun getProfile(
-        onSuccess:(ProfileVO)->Unit,
+        onSuccess:(UserVO)->Unit,
         onFailure:(String)->Unit
     )
     fun logout(

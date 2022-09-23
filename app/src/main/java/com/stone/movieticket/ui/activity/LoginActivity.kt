@@ -13,7 +13,6 @@ import com.stone.movieticket.R
 import com.stone.movieticket.adapter.LoginPagerAdapter
 import com.stone.movieticket.data.model.MovieTicketModel
 import com.stone.movieticket.data.model.MovieTicketModelImpl
-import com.stone.movieticket.data.vos.ProfileVO
 import com.stone.movieticket.delegate.RegisterDelegate
 import com.stone.movieticket.ui.fragment.LoginFragment
 import com.stone.movieticket.ui.fragment.RegisterFragment
@@ -132,7 +131,7 @@ class LoginActivity : AppCompatActivity(), RegisterDelegate {
     }
 
     private fun gotoMainActivity() {
-        startActivity(MainActivity.getInstance(this))
+        startActivity(MainActivity.getIntent(this))
     }
 
     private fun showError(e: String) {

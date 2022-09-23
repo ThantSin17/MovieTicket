@@ -24,7 +24,7 @@
         android:layout_marginTop="@dimen/margin_large"
         android:clipToPadding="false"
         android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:paddingEnd="@dimen/margin_medium_2"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/view_holder_movie_item" />
 </com.stone.movieticket.view_pods.MovieListViewPods>

@@ -4,28 +4,20 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
-import android.widget.Toast
 import androidx.core.view.WindowInsetsControllerCompat
 import com.bumptech.glide.Glide
 import com.google.zxing.BarcodeFormat
-import com.google.zxing.EncodeHintType
 import com.google.zxing.oned.Code128Writer
-import com.google.zxing.qrcode.QRCodeWriter
 import com.stone.movieticket.R
 import com.stone.movieticket.data.model.MovieTicketModel
 import com.stone.movieticket.data.model.MovieTicketModelImpl
 import com.stone.movieticket.data.vos.CheckOutVO
-import com.stone.movieticket.data.vos.MovieVO
-import com.stone.movieticket.network.MovieTicketApi
 import com.stone.movieticket.utils.BASE_IMG_URL
 import kotlinx.android.synthetic.main.activity_awesome.*
 import kotlinx.android.synthetic.main.activity_awesome.ivBack
 import kotlinx.android.synthetic.main.activity_awesome.ivMovie
-import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class AwesomeActivity : AppCompatActivity() {
 
@@ -102,14 +94,14 @@ class AwesomeActivity : AppCompatActivity() {
 
     private fun setUpListener() {
         ivBack.setOnClickListener {
-            startActivity(MainActivity.getInstance(this))
+            startActivity(MainActivity.getIntent(this))
             finish()
         }
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-        startActivity(MainActivity.getInstance(this))
+        startActivity(MainActivity.getIntent(this))
         finish()
     }
 

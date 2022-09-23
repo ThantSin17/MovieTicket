@@ -14,13 +14,14 @@ object MovieTicketModelImpl : MovieTicketModel {
 
 
     /* Database */
-    private var mMovieTicketDatabase: MovieTicketDatabase? = null
+    var mMovieTicketDatabase: MovieTicketDatabase? = null
 
 
     fun initDatabase(context: Context) {
 
         mMovieTicketDatabase = MovieTicketDatabase.getInstant(context)
-
+        token = mMovieTicketDatabase?.userDao()?.getToken()
+        Log.i("Gooo", token.toString())
     }
 
     override fun getNowPlayingMovie(
@@ -28,7 +29,18 @@ object MovieTicketModelImpl : MovieTicketModel {
         onSuccess: (List<MovieVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.getNowPlayingMovie(status, onSuccess, onFailure)
+        onSuccess(mMovieTicketDatabase?.movieDao()?.getMoviesByStatus(status) ?: listOf())
+        mMovieDataAgent.getNowPlayingMovie(
+            status = status,
+            onSuccess = {movieList->
+                movieList.forEach {
+                    it.type = status
+                    mMovieTicketDatabase?.movieDao()?.insertSingleMovie(it)
+                }
+                onSuccess(movieList)
+            },
+            onFailure = onFailure
+        )
     }
 
     override fun register(
@@ -49,7 +61,7 @@ object MovieTicketModelImpl : MovieTicketModel {
                 userInfoResponse.data?.let { userVO ->
                     userVO.token = "Bearer ".plus(userInfoResponse.token)
                     mMovieTicketDatabase?.userDao()?.insertUser(userVO)
-                    token = userVO.token;
+                    token = userVO.token
                     onSuccess(userVO)
                 }
             },
@@ -67,23 +79,44 @@ object MovieTicketModelImpl : MovieTicketModel {
             email = email,
             password = password,
             onSuccess = { userInfoResponse ->
+                Log.i("GoooToken", userInfoResponse.token.toString())
                 userInfoResponse.data?.let { userVO ->
+
                     userVO.token = "Bearer ".plus(userInfoResponse.token)
                     mMovieTicketDatabase?.userDao()?.insertUser(userVO)
-                    token = userVO.token;
+                    token = userVO.token
                     onSuccess(userVO)
                 }
+
             },
             onFailure = onFailure
         )
     }
 
-    override fun getProfile(onSuccess: (ProfileVO) -> Unit, onFailure: (String) -> Unit) {
+    override fun getProfile(onSuccess: (UserVO) -> Unit, onFailure: (String) -> Unit) {
 //        mMovieDataAgent.getProfile(onSuccess,onFailure)
+        try {
+            mMovieTicketDatabase?.userDao()?.getUser()?.let { onSuccess(it) }
+        } catch (e: Exception) {
+            onFailure
+        }
+
     }
 
     override fun logout(onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
-        mMovieDataAgent.logout(onSuccess, onFailure)
+//        mMovieDataAgent.logout(onSuccess, onFailure)
+        token?.let {
+//            mMovieTicketDatabase.userDao().deleteUser()
+            mMovieDataAgent.logout(
+                token = it,
+                onSuccess = { message ->
+                    token = null
+                    mMovieTicketDatabase?.userDao()?.deleteUser()
+                    onSuccess(message)
+                },
+                onFailure = onFailure
+            )
+        }
     }
 
     override fun getMovieDetails(

@@ -18,6 +18,8 @@ const val API_CARD="/api/v1/card"
 const val API_CHECKOUT="/api/v1/checkout"
 
 const val PARAM_STATUS="status"
+const val PARAM_NOW_PLAYING="current"
+const val PARAM_COMING_SOON="comingsoon"
 const val PARAM_NAME="name"
 const val PARAM_AUTHORIZATION="AUTHORIZATION"
 const val PARAM_EMAIL="email"

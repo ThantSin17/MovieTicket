@@ -151,8 +151,8 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
         })
     }
 
-    override fun logout(onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
-        mMovieTicketApi?.logout()?.enqueue(object : Callback<RegisterResponse> {
+    override fun logout(token: String,onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
+        mMovieTicketApi?.logout(token = token)?.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(
                 call: Call<RegisterResponse>,
                 response: Response<RegisterResponse>

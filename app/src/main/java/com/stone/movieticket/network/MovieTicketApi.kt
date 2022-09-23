@@ -51,6 +51,7 @@ interface MovieTicketApi {
 
     @POST(API_LOGOUT)
     fun logout(
+        @Header(PARAM_AUTHORIZATION) token: String,
     ):Call<RegisterResponse>
 
     @GET(API_CINEMA_TIME_SLOT)
