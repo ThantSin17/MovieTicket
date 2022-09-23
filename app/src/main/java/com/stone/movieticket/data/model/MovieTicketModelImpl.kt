@@ -197,11 +197,31 @@ object MovieTicketModelImpl : MovieTicketModel {
     }
 
     override fun getSnacks(onSuccess: (List<SnackVO>) -> Unit, onFailure: (String) -> Unit) {
-        mMovieDataAgent.getSnacks(onSuccess, onFailure)
+        token?.let {
+            onSuccess(mMovieTicketDatabase?.snackDao()?.getAllSnacks() ?: listOf())
+            mMovieDataAgent.getSnacks(
+                token = it,
+                onSuccess = { snacks ->
+                    mMovieTicketDatabase?.snackDao()?.insertSnackList(snacks)
+                    onSuccess(snacks)
+                },
+                onFailure = onFailure
+            )
+        }
     }
 
     override fun getPayments(onSuccess: (List<PaymentVO>) -> Unit, onFailure: (String) -> Unit) {
-        mMovieDataAgent.getPayments(onSuccess, onFailure)
+        token?.let { it ->
+            onSuccess(mMovieTicketDatabase?.paymentMethodDao()?.getAllPaymentMethods() ?: listOf())
+            mMovieDataAgent.getPayments(
+                token = it,
+                onSuccess = { payments ->
+                    mMovieTicketDatabase?.paymentMethodDao()?.insertPaymentMethodList(payments)
+                    onSuccess(payments)
+                },
+                onFailure = onFailure
+            )
+        }
     }
 
     override fun createCard(

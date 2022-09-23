@@ -262,8 +262,12 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
         )
     }
 
-    override fun getSnacks(onSuccess: (List<SnackVO>) -> Unit, onFailure: (String) -> Unit) {
-        mMovieTicketApi?.getSnacks()?.enqueue(
+    override fun getSnacks(
+        token: String,
+        onSuccess: (List<SnackVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mMovieTicketApi?.getSnacks(token = token)?.enqueue(
             object : Callback<SnackResponse> {
                 override fun onResponse(
                     call: Call<SnackResponse>,
@@ -284,10 +288,11 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
     }
 
     override fun getPayments(
+        token: String,
         onSuccess: (List<PaymentVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieTicketApi?.getPaymentMethod()?.enqueue(
+        mMovieTicketApi?.getPaymentMethod(token = token)?.enqueue(
             object : Callback<PaymentResponse> {
                 override fun onResponse(
                     call: Call<PaymentResponse>,

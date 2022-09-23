@@ -8,8 +8,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivBack"
-        android:layout_width="@dimen/margin_xxlarge"
-        android:layout_height="@dimen/margin_xxlarge"
+        android:layout_width="@dimen/margin_xlarge"
+        android:layout_height="@dimen/margin_xlarge"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_outline_chevron_left_black_24" />
 
@@ -18,6 +18,8 @@
         android:layout_height="match_parent"
         android:visibility="visible"
         android:layout_below="@id/ivBack"
+        android:layout_above="@id/btnPay"
+        android:layout_marginBottom="@dimen/margin_card_medium"
         android:fillViewport="true">
         <RelativeLayout
             android:paddingBottom="@dimen/height_bottom_comboset"
@@ -27,7 +29,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvComboSet"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edPromoCode"
@@ -65,9 +67,8 @@
                 android:layout_below="@id/edPromoCode"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium"
-                app:fontFamily="@font/montserrat_regular"
                 android:text="Don't have any promo code ?"
-                android:textSize="@dimen/text_regular_2x" />
+                app:fontFamily="@font/montserrat_regular" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvGetPromoCode"
@@ -78,7 +79,6 @@
                 android:layout_toEndOf="@id/tvLabelPromoCode"
                 android:text="Get it now"
                 android:textColor="@color/secondaryTextBlack80Color"
-                android:textSize="@dimen/text_regular_2x"
                 android:textStyle="bold"
                 app:fontFamily="@font/montserrat_light" />
 
@@ -91,7 +91,7 @@
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:text="Sub Total : 0$"
                 android:textColor="@color/green"
-                android:textSize="@dimen/text_regular_3x"
+                android:textSize="@dimen/text_regular_2x"
                 android:textStyle="bold"
                 app:fontFamily="@font/montserrat_medium" />
 
@@ -104,7 +104,7 @@
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:text="@string/lbl_payment_method"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_regular_3x"
+                android:textSize="@dimen/text_regular_2x"
                 app:fontFamily="@font/montserrat_medium" />
 
             <androidx.recyclerview.widget.RecyclerView

@@ -129,7 +129,6 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
                 obj.put("moviePoster", movieVO.posterPath)
                 obj.put("movieName", movieVO.originalTitle)
                 obj.put("duration", movieVO.runtime.toString())
-//                Toast.makeText(applicationContext, movieVO.runtime.toString(), Toast.LENGTH_SHORT).show()
                 startActivity(ComboSetActivity.getInstance(this, obj.toString(), ticketPrice))
             } else
                 Toast.makeText(applicationContext, "Please choose your seats!!", Toast.LENGTH_SHORT)
@@ -189,6 +188,7 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
 
         tvSeats.text = ""
         selectedSeats = ""
+        ticketPrice = 0
 
         tvTicket.text = selectedMovieSeats.count().toString()
         for (movieSeatVO in selectedMovieSeats) {

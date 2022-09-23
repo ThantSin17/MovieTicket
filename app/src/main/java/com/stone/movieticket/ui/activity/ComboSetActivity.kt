@@ -141,7 +141,6 @@ class ComboSetActivity : AppCompatActivity(), ComboSetDelegate {
         for (paymentVo in paymentList){
             paymentVo.isSelected = paymentVo.id==id
         }
-        btnPay.text="Pay $subTotal"
         mPaymentMethodAdapter.setNewData(paymentList)
     }
 
@@ -155,7 +154,7 @@ class ComboSetActivity : AppCompatActivity(), ComboSetDelegate {
            }
        }
         tvTotalAmount.text="Sub Total : $subTotal\$"
-        btnPay.text="Pay $extraPrice"
+        btnPay.text="Pay $$extraPrice"
         mComSetAdapter.setNewData(snackList)
     }
 
@@ -164,11 +163,11 @@ class ComboSetActivity : AppCompatActivity(), ComboSetDelegate {
             if (snackVo.id==id && snackVo.quantity!=0){
                 snackVo.quantity--
                 subTotal-=snackVo.price
-                extraPrice+=snackVo.price
+                extraPrice-=snackVo.price
             }
         }
         tvTotalAmount.text="Sub Total : $subTotal\$"
-        btnPay.text="Pay $extraPrice"
+        btnPay.text="Pay $$extraPrice"
         mComSetAdapter.setNewData(snackList)
     }
 
