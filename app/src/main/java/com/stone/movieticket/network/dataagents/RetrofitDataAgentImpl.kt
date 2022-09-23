@@ -202,12 +202,13 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
     }
 
     override fun getCinemaList(
+        token: String,
         selectedDate: String,
         movieId: String,
         onSuccess: (List<CinemaVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieTicketApi?.getTimeSlotByDate(date = selectedDate, movieId = movieId)?.enqueue(
+        mMovieTicketApi?.getTimeSlotByDate(token = token, date = selectedDate, movieId = movieId)?.enqueue(
             object : Callback<CinemaResponse> {
                 override fun onResponse(
                     call: Call<CinemaResponse>,

@@ -39,6 +39,7 @@ interface MovieTicketDataAgent {
         onFailure:(String)->Unit
     )
     fun getCinemaList(
+        token: String,
         selectedDate: String,
         movieId: String,
         onSuccess: (List<CinemaVO>) -> Unit,

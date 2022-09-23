@@ -94,7 +94,9 @@ class ChooseMovieSeatActivity : AppCompatActivity(), MovieSeatsDelegate {
             onSuccess = {
                 bindMovieSeatData(it)
             },
-            onFailure = {}
+            onFailure = {
+
+            }
         )
     }
 

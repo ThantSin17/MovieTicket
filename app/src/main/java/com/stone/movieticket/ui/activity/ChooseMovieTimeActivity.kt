@@ -83,6 +83,7 @@ class ChooseMovieTimeActivity : AppCompatActivity(), ChooseDateDelegate, TimeSlo
                 bindCinemaData(it)
             },
             onFailure = {
+//                bindCinemaData(li)
                 showMessage(it)
             }
         )

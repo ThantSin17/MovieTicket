@@ -56,6 +56,7 @@ interface MovieTicketApi {
 
     @GET(API_CINEMA_TIME_SLOT)
     fun getTimeSlotByDate(
+        @Header(PARAM_AUTHORIZATION) token: String,
         @Query(PARAM_DATE) date: String,
         @Query(PARAM_MOVIE_ID)movieId: String
     ):Call<CinemaResponse>

@@ -2,6 +2,7 @@ package com.stone.movieticket.data.model
 
 import android.content.Context
 import android.util.Log
+import com.google.gson.Gson
 import com.stone.movieticket.data.vos.*
 import com.stone.movieticket.network.dataagents.MovieTicketDataAgent
 import com.stone.movieticket.network.dataagents.RetrofitDataAgentImpl
@@ -145,7 +146,35 @@ object MovieTicketModelImpl : MovieTicketModel {
         onFailure: (String) -> Unit,
         movieId: String
     ) {
-        mMovieDataAgent.getCinemaList(selectedDate, movieId, onSuccess, onFailure)
+        token?.let {
+           val dateVo = mMovieTicketDatabase?.dateAndCinemaDao()?.getCinemaByDate(date = selectedDate)
+
+//            dateVo?.cinema?.let { it1 -> onSuccess(it1) }
+            onSuccess(dateVo?.cinema ?: listOf())
+
+            Log.i("Goooo",Gson().toJson(dateVo))
+
+            mMovieDataAgent.getCinemaList(
+                token = it,
+                selectedDate = selectedDate,
+                movieId = movieId,
+                onSuccess = {
+                    val dateAndCinemaVO = DateAndCinemaVO(
+                        date = selectedDate,
+                        cinema = it
+                    )
+                    try {
+                        mMovieTicketDatabase?.dateAndCinemaDao()?.insertDateAndCinema(dateAndCinemaVO)
+                    }catch (e:Exception){
+                        Log.i("Goooo",e.toString())
+                    }
+
+
+                    onSuccess(it)
+                },
+                onFailure = onFailure
+            )
+        }
     }
 
     override fun getMovieSeats(
