@@ -10,6 +10,31 @@ import retrofit2.http.*
 
 interface MovieTicketApi {
 
+    @FormUrlEncoded
+    @POST(API_REGISTER)
+    fun registerWithEmail(
+        @Field(PARAM_NAME) name:String,
+        @Field(PARAM_EMAIL) email:String,
+        @Field(PARAM_PHONE) phone:String,
+        @Field(PARAM_PASSWORD) password:String,
+    ):Call<UserInfoResponse>
+
+    @FormUrlEncoded
+    @POST(API_LOGIN)
+    fun loginWithEmail(
+        @Field(PARAM_EMAIL) email:String,
+        @Field(PARAM_PASSWORD) password:String,
+    ):Call<UserInfoResponse>
+
+//    @GET(API_GET_PROFILE)
+//    fun getProfile(
+//        @Header(PARAM_AUTHORIZATION) token: String,
+//    ): Call<ProfileResponse>
+    @GET(API_PROFILE)
+    fun getProfile(
+        @Header(PARAM_AUTHORIZATION) token: String,
+    ):Call<RegisterResponse>
+
     @GET(API_GET_NOW_SHOWING)
     fun getNowShowingMovie(
         @Query(PARAM_STATUS)  status:String="current"
@@ -19,25 +44,11 @@ interface MovieTicketApi {
         @Path("movie_id")  movieId:String
     ): Call<MovieDetailResponse>
 
-    @FormUrlEncoded
-    @POST(API_REGISTER)
-    fun registerWithEmail(
-        @Field(PARAM_NAME) name:String,
-        @Field(PARAM_EMAIL) email:String,
-        @Field(PARAM_PHONE) phone:String,
-        @Field(PARAM_PASSWORD) password:String,
-    ):Call<RegisterResponse>
 
-    @FormUrlEncoded
-    @POST(API_LOGIN)
-    fun loginWithEmail(
-        @Field(PARAM_EMAIL) email:String,
-        @Field(PARAM_PASSWORD) password:String,
-    ):Call<RegisterResponse>
 
-    @GET(API_PROFILE)
-    fun getProfile(
-    ):Call<RegisterResponse>
+
+
+
     @POST(API_LOGOUT)
     fun logout(
     ):Call<RegisterResponse>

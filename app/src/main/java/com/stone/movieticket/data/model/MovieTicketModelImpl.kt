@@ -1,43 +1,89 @@
 package com.stone.movieticket.data.model
 
+import android.content.Context
+import android.util.Log
 import com.stone.movieticket.data.vos.*
 import com.stone.movieticket.network.dataagents.MovieTicketDataAgent
 import com.stone.movieticket.network.dataagents.RetrofitDataAgentImpl
+import com.stone.movieticket.persistance.MovieTicketDatabase
 
-object MovieTicketModelImpl: MovieTicketModel{
-    private val mMovieDataAgent:MovieTicketDataAgent = RetrofitDataAgentImpl
+object MovieTicketModelImpl : MovieTicketModel {
+    private val mMovieDataAgent: MovieTicketDataAgent = RetrofitDataAgentImpl
+
+    var token: String? = null
+
+
+    /* Database */
+    private var mMovieTicketDatabase: MovieTicketDatabase? = null
+
+
+    fun initDatabase(context: Context) {
+
+        mMovieTicketDatabase = MovieTicketDatabase.getInstant(context)
+
+    }
+
     override fun getNowPlayingMovie(
-        status:String,
+        status: String,
         onSuccess: (List<MovieVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.getNowPlayingMovie(status,onSuccess,onFailure)
+        mMovieDataAgent.getNowPlayingMovie(status, onSuccess, onFailure)
     }
 
     override fun register(
-        name:String,email:String,phone:String,
+        name: String,
+        email: String,
+        phone: String,
         password: String,
-        onSuccess: (ProfileVO) -> Unit,
+        onSuccess: (UserVO) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.register(name,email,phone,password,onSuccess,onFailure)
+//        mMovieDataAgent.register(name, email, phone, password, , onFailure)
+        mMovieDataAgent.register(
+            name = name,
+            phone = phone,
+            email = email,
+            password = password,
+            onSuccess = { userInfoResponse ->
+                userInfoResponse.data?.let { userVO ->
+                    userVO.token = "Bearer ".plus(userInfoResponse.token)
+                    mMovieTicketDatabase?.userDao()?.insertUser(userVO)
+                    token = userVO.token;
+                    onSuccess(userVO)
+                }
+            },
+            onFailure = onFailure
+        )
     }
 
     override fun login(
         email: String,
         password: String,
-        onSuccess: (ProfileVO) -> Unit,
+        onSuccess: (UserVO) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.login(email,password,onSuccess,onFailure)
+        mMovieDataAgent.login(
+            email = email,
+            password = password,
+            onSuccess = { userInfoResponse ->
+                userInfoResponse.data?.let { userVO ->
+                    userVO.token = "Bearer ".plus(userInfoResponse.token)
+                    mMovieTicketDatabase?.userDao()?.insertUser(userVO)
+                    token = userVO.token;
+                    onSuccess(userVO)
+                }
+            },
+            onFailure = onFailure
+        )
     }
 
     override fun getProfile(onSuccess: (ProfileVO) -> Unit, onFailure: (String) -> Unit) {
-        mMovieDataAgent.getProfile(onSuccess,onFailure)
+//        mMovieDataAgent.getProfile(onSuccess,onFailure)
     }
 
     override fun logout(onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
-        mMovieDataAgent.logout(onSuccess,onFailure)
+        mMovieDataAgent.logout(onSuccess, onFailure)
     }
 
     override fun getMovieDetails(
@@ -45,7 +91,7 @@ object MovieTicketModelImpl: MovieTicketModel{
         onSuccess: (MovieVO) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.getMovieDetails(movieId,onSuccess,onFailure)
+        mMovieDataAgent.getMovieDetails(movieId, onSuccess, onFailure)
     }
 
     override fun getCinemaList(
@@ -54,7 +100,7 @@ object MovieTicketModelImpl: MovieTicketModel{
         onFailure: (String) -> Unit,
         movieId: String
     ) {
-        mMovieDataAgent.getCinemaList(selectedDate,movieId,onSuccess,onFailure)
+        mMovieDataAgent.getCinemaList(selectedDate, movieId, onSuccess, onFailure)
     }
 
     override fun getMovieSeats(
@@ -63,15 +109,15 @@ object MovieTicketModelImpl: MovieTicketModel{
         onSuccess: (List<List<MovieSeatVO>>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.getMovieSeats(timeSlotId,movieDate,onSuccess,onFailure)
+        mMovieDataAgent.getMovieSeats(timeSlotId, movieDate, onSuccess, onFailure)
     }
 
     override fun getSnacks(onSuccess: (List<SnackVO>) -> Unit, onFailure: (String) -> Unit) {
-        mMovieDataAgent.getSnacks(onSuccess,onFailure)
+        mMovieDataAgent.getSnacks(onSuccess, onFailure)
     }
 
     override fun getPayments(onSuccess: (List<PaymentVO>) -> Unit, onFailure: (String) -> Unit) {
-        mMovieDataAgent.getPayments(onSuccess,onFailure)
+        mMovieDataAgent.getPayments(onSuccess, onFailure)
     }
 
     override fun createCard(
@@ -82,7 +128,14 @@ object MovieTicketModelImpl: MovieTicketModel{
         onSuccess: (List<CardVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.createCard(cardNumber,cardHolder,expirationDate, cvc, onSuccess, onFailure)
+        mMovieDataAgent.createCard(
+            cardNumber,
+            cardHolder,
+            expirationDate,
+            cvc,
+            onSuccess,
+            onFailure
+        )
     }
 
     override fun checkOut(
@@ -92,4 +145,6 @@ object MovieTicketModelImpl: MovieTicketModel{
     ) {
         mMovieDataAgent.checkOut(extraJson, onSuccess, onFailure)
     }
+
+
 }

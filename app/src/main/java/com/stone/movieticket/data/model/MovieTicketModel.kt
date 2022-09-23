@@ -11,13 +11,13 @@ interface MovieTicketModel {
     fun register(
         name:String,email:String,phone:String,
         password:String,
-        onSuccess:(ProfileVO)->Unit,
+        onSuccess:(UserVO)->Unit,
         onFailure:(String)->Unit
     )
     fun login(
         email:String,
         password: String,
-        onSuccess:(ProfileVO)->Unit,
+        onSuccess:(UserVO)->Unit,
         onFailure:(String)->Unit
     )
     fun getProfile(

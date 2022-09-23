@@ -94,9 +94,7 @@ class LoginActivity : AppCompatActivity(), RegisterDelegate {
                 tab.text = getString(R.string.lbl_sign_up)
             }
         }.attach()
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.frgContainer,fragment)
-//            .commit()
+
     }
 
     override fun doRegister(name:String,email:String,phone:String, password: String) {
@@ -108,7 +106,8 @@ class LoginActivity : AppCompatActivity(), RegisterDelegate {
             onSuccess = {
 
                 Toast.makeText(applicationContext, "Registering Successful", Toast.LENGTH_SHORT).show()
-                setUpLayout(LoginFragment())
+                gotoMainActivity()
+//                setUpLayout(LoginFragment())
             },
             onFailure = {
                 showError(it)

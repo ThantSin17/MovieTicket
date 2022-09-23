@@ -77,6 +77,8 @@
         <entry key="..\:/PADC/MovieTicket/app/src/main/res/layout/view_holder_payment_method.xml" value="0.17552083333333332" />
         <entry key="..\:/PADC/MovieTicket/app/src/main/res/layout/view_holder_visa.xml" value="0.17552083333333332" />
         <entry key="..\:/PADC/MovieTicket/app/src/main/res/layout/view_pod_login_btn.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.2776268115942029" />
       </map>
     </option>
   </component>

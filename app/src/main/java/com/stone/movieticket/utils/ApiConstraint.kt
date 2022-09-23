@@ -19,6 +19,7 @@ const val API_CHECKOUT="/api/v1/checkout"
 
 const val PARAM_STATUS="status"
 const val PARAM_NAME="name"
+const val PARAM_AUTHORIZATION="AUTHORIZATION"
 const val PARAM_EMAIL="email"
 const val PARAM_PASSWORD="password"
 const val PARAM_PHONE="phone"

@@ -3,6 +3,7 @@ package com.stone.movieticket.network.dataagents
 import com.stone.movieticket.data.vos.*
 import com.stone.movieticket.network.responses.MovieSeatResponse
 import com.stone.movieticket.network.responses.SnackResponse
+import com.stone.movieticket.network.responses.UserInfoResponse
 
 interface MovieTicketDataAgent {
     fun getNowPlayingMovie(
@@ -11,18 +12,19 @@ interface MovieTicketDataAgent {
         onFailure:(String)->Unit
     )
     fun register(
-        name:String,email:String,phone:String,
+        name:String, email:String, phone:String,
         password:String,
-        onSuccess:(ProfileVO)->Unit,
+        onSuccess:(UserInfoResponse)->Unit,
         onFailure:(String)->Unit
     )
     fun login(
         email:String,
         password: String,
-        onSuccess:(ProfileVO)->Unit,
+        onSuccess:(UserInfoResponse)->Unit,
         onFailure:(String)->Unit
     )
     fun getProfile(
+        token:String,
         onSuccess:(ProfileVO)->Unit,
         onFailure:(String)->Unit
     )
