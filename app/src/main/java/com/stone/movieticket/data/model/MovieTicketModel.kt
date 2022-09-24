@@ -53,6 +53,11 @@ interface MovieTicketModel {
         onSuccess: (List<PaymentVO>) -> Unit,
         onFailure: (String) -> Unit
     )
+
+    fun getCards(
+        onSuccess : (List<CardVO>) -> Unit,
+        onFail : (String) -> Unit
+    )
     fun createCard(
         cardNumber:String,
         cardHolder:String,

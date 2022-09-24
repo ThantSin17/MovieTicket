@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.stone.movieticket.data.vos.*
 import com.stone.movieticket.persistance.daos.*
 
-@Database(entities = [PaymentVO::class,SnackVO::class,DateAndCinemaVO::class,MovieVO::class,UserVO::class], version = 3, exportSchema = false)
+@Database(entities = [CardVO::class,PaymentVO::class,SnackVO::class,DateAndCinemaVO::class,MovieVO::class,UserVO::class], version = 4, exportSchema = false)
 abstract class MovieTicketDatabase : RoomDatabase() {
     companion object{
         const val DB_NAME = "THE_MOVIE_TICKET_DB"
@@ -31,5 +31,6 @@ abstract class MovieTicketDatabase : RoomDatabase() {
     abstract fun dateAndCinemaDao() : CinemaDao
     abstract fun snackDao() : SnackDao
     abstract fun paymentMethodDao() : PaymentMethodDao
+    abstract fun cardDao() : CardDao
 
 }

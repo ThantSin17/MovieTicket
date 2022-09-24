@@ -78,8 +78,8 @@ class AwesomeActivity : AppCompatActivity() {
     }
 
     private fun generateBarcode() :Bitmap{
-        val width=900
-        val height=300//pixels
+        val width=500
+        val height=100//pixels
         val qrCodeContent = mCheckOutVO.bookingNo
 //        val hints = hashMapOf<EncodeHintType, Int>().also { it[EncodeHintType.MARGIN] = 1 } // Make the QR code buffer border narrower
         val bits = Code128Writer().encode(qrCodeContent, BarcodeFormat.CODE_128, width, height)
@@ -95,6 +95,7 @@ class AwesomeActivity : AppCompatActivity() {
     private fun setUpListener() {
         ivBack.setOnClickListener {
             startActivity(MainActivity.getIntent(this))
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             finish()
         }
     }
@@ -102,6 +103,7 @@ class AwesomeActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         startActivity(MainActivity.getIntent(this))
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         finish()
     }
 

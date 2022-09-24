@@ -36,4 +36,6 @@
     <string name="lbl_Login">Login</string>
     <string name="lbl_name">Name</string>
     <string name="no_card_found_n_create_your_card_first">No card found! \n Create Your card first!</string>
+    <string name="lbl_add_new_card">Add New Card</string>
+    <string name="btn_confirm">Confirm</string>
 </resources>

@@ -78,6 +78,7 @@ interface MovieTicketApi {
     @FormUrlEncoded
     @POST(API_CARD)
     fun createCard(
+        @Header(PARAM_AUTHORIZATION) token: String,
         @Field(PARAM_CARD_NUMBER) cardNumber: String,
         @Field(PARAM_CARD_HOLDER) cardHolder: String,
         @Field(PARAM_EXPIRATION_DATE) expirationDate: String,
@@ -87,6 +88,7 @@ interface MovieTicketApi {
     @Headers("Content-Type: application/json")
     @POST(API_CHECKOUT)
     fun checkOut(
+        @Header(PARAM_AUTHORIZATION) token: String,
         @Body checkOut: CheckOutVO
     ): Call<CheckOutResponse>
 

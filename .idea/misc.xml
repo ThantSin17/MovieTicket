@@ -77,7 +77,10 @@
         <entry key="..\:/PADC/MovieTicket/app/src/main/res/layout/view_holder_payment_method.xml" value="0.17552083333333332" />
         <entry key="..\:/PADC/MovieTicket/app/src/main/res/layout/view_holder_visa.xml" value="0.17552083333333332" />
         <entry key="..\:/PADC/MovieTicket/app/src/main/res/layout/view_pod_login_btn.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/activity_awesome.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_choose_movie_seats_activity.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_choose_movie_time.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_choose_payment.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_combo_set.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/activity_movie_detail.xml" value="0.2776268115942029" />
@@ -85,8 +88,11 @@
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/view_holder_cast.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/view_holder_combo_set.xml" value="0.5560747663551402" />
+        <entry key="app/src/main/res/layout/view_holder_day.xml" value="0.8625221363012342" />
         <entry key="app/src/main/res/layout/view_holder_movie_item.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/view_holder_movie_seat.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/view_holder_movie_time.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/view_holder_movie_time_item.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/view_pod_movie_list.xml" value="0.2776268115942029" />
       </map>
     </option>

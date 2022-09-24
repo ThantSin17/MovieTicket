@@ -313,6 +313,7 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
     }
 
     override fun createCard(
+        token: String,
         cardNumber: String,
         cardHolder: String,
         expirationDate: String,
@@ -320,7 +321,7 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
         onSuccess: (List<CardVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieTicketApi?.createCard(cardNumber, cardHolder, expirationDate, cvc)?.enqueue(
+        mMovieTicketApi?.createCard(token = token,cardNumber, cardHolder, expirationDate, cvc)?.enqueue(
             object : Callback<CardResponse> {
                 override fun onResponse(
                     call: Call<CardResponse>,
@@ -341,11 +342,12 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
     }
 
     override fun checkOut(
+        token: String,
         extraJson: CheckOutVO,
         onSuccess: (CheckOutVO) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieTicketApi?.checkOut(checkOut = extraJson)
+        mMovieTicketApi?.checkOut(token=token,checkOut = extraJson)
             ?.enqueue(object : Callback<CheckOutResponse> {
                 override fun onResponse(
                     call: Call<CheckOutResponse>,
@@ -355,7 +357,7 @@ object RetrofitDataAgentImpl : MovieTicketDataAgent {
                         if (response.body()?.code == 200) {
                             response.body()?.data?.let { onSuccess(it) }
                         } else response.body()?.message?.let { onFailure(it) }
-                    } else response.body()?.message?.let { onFailure(it) }
+                    } else  onFailure(response.message())
                 }
 
                 override fun onFailure(call: Call<CheckOutResponse>, t: Throwable) {

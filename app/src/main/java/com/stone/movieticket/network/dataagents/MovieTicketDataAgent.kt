@@ -63,6 +63,7 @@ interface MovieTicketDataAgent {
         onFailure: (String) -> Unit
     )
     fun createCard(
+        token: String,
         cardNumber:String,
         cardHolder:String,
         expirationDate:String,
@@ -71,6 +72,7 @@ interface MovieTicketDataAgent {
         onFailure: (String) -> Unit
     )
     fun checkOut(
+        token: String,
         extraJson:CheckOutVO,
         onSuccess: (CheckOutVO) -> Unit,
         onFailure: (String) -> Unit

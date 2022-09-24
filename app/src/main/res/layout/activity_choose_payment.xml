@@ -8,8 +8,9 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivBack"
-        android:layout_width="@dimen/margin_xxlarge"
-        android:layout_height="@dimen/margin_xxlarge"
+        android:layout_width="@dimen/margin_xlarge"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:layout_height="@dimen/margin_xlarge"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_outline_chevron_left_black_24" />
 
@@ -19,10 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ivBack"
         android:layout_marginStart="@dimen/margin_medium_2"
+        android:fontFamily="@font/roboto_regular"
         android:text="@string/lbl_payment_amount"
-        app:fontFamily="@font/montserrat_light"
         android:textColor="@color/secondaryTextBlackColor"
-        android:textSize="@dimen/text_regular_2x" />
+        android:textSize="@dimen/text_regular" />
 
     <TextView
         android:id="@+id/tvPaymentAmount"
@@ -31,10 +32,10 @@
         android:layout_below="@id/tvPaymentAmountLabel"
         android:layout_marginStart="@dimen/margin_medium_2"
         android:layout_marginTop="@dimen/margin_medium"
+        android:fontFamily="@font/roboto_regular"
         android:text="$ 926.21"
         android:textColor="@color/black"
-        app:fontFamily="@font/montserrat_medium"
-        android:textSize="@dimen/text_heading_2x"
+        android:textSize="@dimen/text_heading_1x"
         android:textStyle="bold" />
 
     <alirezat775.lib.carouselview.CarouselView
@@ -65,9 +66,9 @@
         android:layout_marginStart="@dimen/margin_medium_2"
         android:layout_marginTop="@dimen/margin_xlarge"
         android:layout_toEndOf="@id/ivAdd"
-        android:text="Add New Card"
+        android:text="@string/lbl_add_new_card"
         android:textColor="@color/green"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_regular_2x"
         android:textStyle="bold"
         app:fontFamily="@font/montserrat_regular" />
 
@@ -80,7 +81,7 @@
         android:layout_marginStart="@dimen/margin_medium_2"
         android:layout_marginEnd="@dimen/margin_medium_2"
         android:layout_marginBottom="?actionBarSize"
-        android:text="Confirm"
+        android:text="@string/btn_confirm"
         android:textAllCaps="false"
         android:textSize="@dimen/text_regular_2x"
         android:textStyle="bold"

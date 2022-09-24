@@ -110,12 +110,13 @@ class ComboSetActivity : AppCompatActivity(), ComboSetDelegate {
 
     private fun setUpListener() {
         btnPay.setOnClickListener {
-            snackList.removeIf { it.quantity==0 }
+//            snackList.removeIf { it.quantity==0 }
+
             val snacks=JSONArray("""${Gson().toJson(snackList)}""")
             extraJson.put("total_price",extraPrice)
             extraJson.put("snacks",snacks)
 
-            startActivity(ChoosePaymentActivity.getInstance(this,extraJson.toString()))
+            startActivity(ChoosePaymentActivity.getInstance(this,extraJson.toString(),totalPrice=extraPrice))
         }
         ivBack.setOnClickListener {
             onBackPressed()

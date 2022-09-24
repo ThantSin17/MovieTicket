@@ -104,6 +104,22 @@ object MovieTicketModelImpl : MovieTicketModel {
 
     }
 
+    override fun getCards(onSuccess: (List<CardVO>) -> Unit, onFailure: (String) -> Unit) {
+        token?.let {
+            onSuccess(mMovieTicketDatabase?.cardDao()?.getAllCards() ?: listOf())
+            mMovieDataAgent.getProfile(
+                token = it,
+                onSuccess = {profileVO ->
+                    profileVO.cards?.let { it1 -> mMovieTicketDatabase?.cardDao()?.insertCardList(it1) }
+                    onSuccess(profileVO.cards ?: listOf())
+                },
+
+                onFailure = onFailure
+            )
+        }
+    }
+
+
     override fun logout(onSuccess: (String) -> Unit, onFailure: (String) -> Unit) {
 //        mMovieDataAgent.logout(onSuccess, onFailure)
         token?.let {
@@ -224,6 +240,7 @@ object MovieTicketModelImpl : MovieTicketModel {
         }
     }
 
+
     override fun createCard(
         cardNumber: String,
         cardHolder: String,
@@ -232,14 +249,17 @@ object MovieTicketModelImpl : MovieTicketModel {
         onSuccess: (List<CardVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.createCard(
-            cardNumber,
-            cardHolder,
-            expirationDate,
-            cvc,
-            onSuccess,
-            onFailure
-        )
+        token?.let {
+            mMovieDataAgent.createCard(
+                token=it,
+                cardNumber,
+                cardHolder,
+                expirationDate,
+                cvc,
+                onSuccess,
+                onFailure
+            )
+        }
     }
 
     override fun checkOut(
@@ -247,7 +267,9 @@ object MovieTicketModelImpl : MovieTicketModel {
         onSuccess: (CheckOutVO) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mMovieDataAgent.checkOut(extraJson, onSuccess, onFailure)
+        token?.let {
+            mMovieDataAgent.checkOut(token= it,extraJson, onSuccess, onFailure)
+        }
     }
 
 

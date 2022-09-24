@@ -13,7 +13,8 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="Available In"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_regular_3x"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular_2x"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvTitle"
-        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginBottom="@dimen/margin_medium"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

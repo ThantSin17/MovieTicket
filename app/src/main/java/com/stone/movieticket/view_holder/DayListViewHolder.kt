@@ -20,7 +20,7 @@ class DayListViewHolder(itemView: View, chooseDateDelegate: ChooseDateDelegate) 
                     R.color.white)
                 )
                 text=dateVO.date
-                textSize=20f
+                textSize=16f
             }
             itemView.tvDateText.apply {
                 this.setTextColor(ContextCompat.getColor(
@@ -29,7 +29,7 @@ class DayListViewHolder(itemView: View, chooseDateDelegate: ChooseDateDelegate) 
 
                 )
                 text=dateVO.day
-                this.textSize=20f
+                this.textSize=16f
             }
         }else{
             itemView.tvDayText.apply {
@@ -39,7 +39,7 @@ class DayListViewHolder(itemView: View, chooseDateDelegate: ChooseDateDelegate) 
                 )
 
                 text=dateVO.date
-                this.textSize=18f
+                this.textSize=14f
             }
             itemView.tvDateText.apply {
                 this.setTextColor(ContextCompat.getColor(
@@ -47,7 +47,7 @@ class DayListViewHolder(itemView: View, chooseDateDelegate: ChooseDateDelegate) 
                     R.color.secondaryTextWhite30Color)
                 )
                 text=dateVO.day
-                this.textSize=18f
+                this.textSize=14f
             }
         }
 

@@ -35,10 +35,12 @@ class ChoosePaymentActivity : AppCompatActivity() {
 
     companion object {
         private const val EXTRA_JSON = "EXTRA_JSON"
+        private const val EXTRA_PRICE = "EXTRA_PRICE"
 
-        fun getInstance(context: Context,extraJson:String): Intent {
+        fun getInstance(context: Context, extraJson: String, totalPrice: Int): Intent {
             val intent = Intent(context, ChoosePaymentActivity::class.java)
             intent.putExtra(EXTRA_JSON, extraJson)
+            intent.putExtra(EXTRA_PRICE,totalPrice)
             return intent
         }
 
@@ -62,6 +64,9 @@ class ChoosePaymentActivity : AppCompatActivity() {
         try {
             val extra=intent?.getStringExtra(EXTRA_JSON)
             extraJson= JSONObject("""$extra""")
+            totalAmount= intent?.getIntExtra(EXTRA_PRICE,0) ?: 0
+
+            tvPaymentAmount.text = "$ $totalAmount"
         }catch (e:Exception){
             Log.i("Goooo",e.toString())
         }
@@ -75,15 +80,15 @@ class ChoosePaymentActivity : AppCompatActivity() {
     }
 
     private fun requestData() {
-        mMovieTicketModel.getProfile(
-            onSuccess = { profileVO ->
+        mMovieTicketModel.getCards(
+            onSuccess = { cards ->
                 cardList.clear()
-                profileVO.cards?.let { cardList.addAll(it) }
+                cards.let { cardList.addAll(it) }
                 cardList.reverse()
                 mVisaCardAdapter.setNewData(cardList)
                 carousel.setCurrentPosition(0)
             },
-            onFailure = {}
+            onFail = {}
         )
     }
 
